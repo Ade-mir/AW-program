@@ -1,0 +1,312 @@
+<!-- Task 2: 
+
+DONE - Create a website for your meal plans the next week using HTML. The meal schedule should be displayed in a table. So you would have days in one direction, and breakfast, lunch, dinner in another.
+
+Task 3:
+
+Have dinners/meals link to recipes on Matprat, Meny or other food blogs, so it's easy to look up how you should prepare your meals.
+
+Task 4:
+
+You aren't quite happy with how your table looks right now. Use w3schools (google it!) or another site to figure out how you can use available attributes for table elements to change the background color, border size / style font-size etc. Play around with your table until you like how it looks.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My mealplan for the week.</title>
+    <link rel="stylesheet" href="/1-task-1-2.css" />
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#section-monday">Monday</a></li>
+        <li><a href="#section-tuesday">Tuesday</a></li>
+        <li><a href="#section-wednesday">Wednesday</a></li>
+        <li><a href="#section-thursday">Thursday</a></li>
+        <li><a href="#section-friday">Friday</a></li>
+        <li><a href="#section-saturday">Saturday</a></li>
+        <li><a href="#section-sunday">Sunday</a></li>
+      </ul>
+    </nav>
+    <img
+      class="hero"
+      src="/1-task-1-1-images/dan-gold-4_jhDO54BYg-unsplash-min.jpg"
+      alt=""
+    />
+  </header>
+  <body>
+    <div class="two-column-split">
+      <div class="column col-1">
+        <h1>My weekly mealplan</h1>
+        <div class="day-description">
+          <section id="section-monday">
+            <h2>Monday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+          <section id="section-tuesday">
+            <h2>Tuesday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+          <section id="section-wednesday">
+            <h2>Wednesday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+          <section id="section-thursday">
+            <h2>Thursday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+          <section id="section-friday">
+            <h2>Friday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+          <section id="section-saturday">
+            <h2>Saturday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+          <section id="section-sunday">
+            <h2>Sunday</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </section>
+        </div>
+      </div>
+      <div class="column col-2">
+        <h1>Mealplan table</h1>
+        <table>
+          <tr>
+            <th>Day</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+          </tr>
+          <tr id="breakfast">
+            <td class="bold-day">Monday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+          </tr>
+          <tr id="lunch">
+            <td class="bold-day">Tuesday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Lasagna</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Lasagna</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Lasagna</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="bold-day">Wednesday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/pizzadeig/"
+                >Pizza</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/pizzadeig/"
+                >Pizza</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/pizzadeig/"
+                >Pizza</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="bold-day">Thursday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="bold-day">Friday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="bold-day">Saturday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td class="bold-day">Sunday</td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+            <td>
+              <a
+                target="_blank"
+                href="https://www.matprat.no/oppskrifter/kos/vegetarlasagne-med-spinat/"
+              >
+                Eggs</a
+              >
+            </td>
+          </tr>
+          <thead></thead>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

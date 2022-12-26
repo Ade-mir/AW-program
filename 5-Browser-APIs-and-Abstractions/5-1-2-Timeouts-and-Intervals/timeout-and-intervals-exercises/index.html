@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html class="sl-root decks export offline loaded">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Copy of Browser and DOM API</title>
+
+    <meta
+      name="description"
+      content="Introduction to the DOM and the other API&#39;s of the browser"
+    />
+
+    <link rel="stylesheet" type="text/css" href="lib/offline-v2.css" />
+  </head>
+  <body class="reveal-viewport theme-font-montserrat theme-color-cobalt-orange">
+    <div class="reveal">
+      <div class="slides">
+        <section class="stack" data-id="defe15e47cd2fbfa21bb4f9bf52bd0c2">
+          <section
+            data-background-color="#472172"
+            data-id="a372896c013b85a3684e49ec24f82410"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 43px; height: auto"
+              data-block-id="b9eba425c580e3a87229b6837fa43664"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>Timeouts and Intervals Exercises</h1>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="3d3d4bcb5611b2943068c8dfea6e2dd0"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 43px; height: auto"
+              data-block-id="6d6043be9d7fc2a5456e936b0b5af2c4"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>1.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 600px; left: 180px; top: 162px"
+              data-block-id="7c3a5a9f9b86599746f100a409eef0dd"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>
+                  Create a function delayedPrint(str, delay) that prints the
+                  string <strong>str</strong> after
+                  <strong>delay</strong> seconds
+                </p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="code"
+              style="width: 872px; height: 159px; left: 44px; top: 350px"
+              data-block-id="29afc7262723dc681c1219aad4421cb4"
+            >
+              <div
+                class="sl-block-content fragment notranslate"
+                style="z-index: 12; font-size: 224%"
+                data-highlight-theme="monokai"
+                data-fragment-index="0"
+              >
+                <pre class="javascript"><code>delayedPrint("hello", 3);
+// (3 seconds of silence)
+&gt;&gt; hello </code></pre>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="23be52a70c038c0be2105bcc6b07c800"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 43px; height: auto"
+              data-block-id="f07a3ec8d4f5831f201dee90069239ed"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>2.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 676px; left: 142px; top: 171px"
+              data-block-id="828943ee87e605f6eba4b4d460f56682"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>
+                  Create a function printSequence(n, m, delay) that prints each
+                  number from <strong>n</strong> to <strong>m</strong> with a
+                  <strong>delay</strong> second delay
+                </p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="code"
+              style="width: 872px; height: 319px; left: 44px; top: 321px"
+              data-block-id="6d19afd123a498b91a1be79d6e90c2b1"
+            >
+              <div
+                class="sl-block-content fragment notranslate"
+                style="z-index: 12; font-size: 224%"
+                data-highlight-theme="monokai"
+                data-fragment-index="0"
+              >
+                <pre class="javascript"><code>printSequence(1, 3, 1);
+// (1 second of silence)
+&gt;&gt; 1 
+// (1 second of silence)
+&gt;&gt; 2 
+// (1 second of silence)
+&gt;&gt; 3 </code></pre>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="ada1aad03774a624141c7919fcdb8fab"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 9px; height: auto"
+              data-block-id="448ad4dad592ef9c25fa015a21e32a15"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>3.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 676px; left: 142px; top: 132px"
+              data-block-id="f4281dfd2d69164fc80dacdecac21df3"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>
+                  Create a function printTime(interval) that prints the current
+                  time (HH:mm:ss) at every <strong>interval</strong> seconds
+                </p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 660px; left: 150px; top: 309px"
+              data-block-id="16430e81d7efe2e52be202f2251e74a5"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 12"
+              >
+                <p>(You will need to read about JavaScript Dates)</p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 660px; left: 150px; top: 358px"
+              data-block-id="a22c42c228cf13de88758818bea0926e"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 13"
+              >
+                <p>
+                  (<a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"
+                    target="_blank"
+                    >https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</a
+                  >)
+                </p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="shape"
+              style="width: 92px; height: 84px; left: 434px; top: 560px"
+              data-block-id="21dd8f97fa9d937b7cb3fda9412c0031"
+            >
+              <div
+                class="sl-block-content"
+                data-shape-type="arrow-down"
+                data-shape-fill-color="rgb(255, 255, 255)"
+                data-shape-stretch="true"
+                style="z-index: 14"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  width="100%"
+                  height="100%"
+                  preserveaspectratio="none"
+                  viewbox="0 0 92 84"
+                >
+                  <polygon
+                    points="46,84 92,42 64.39999999999999,42 64.39999999999999,0 27.599999999999998,0 27.599999999999998,42 0,42 46,84"
+                    class="shape-element"
+                    fill="rgb(255, 255, 255)"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="c8bb0b1b3a734b7714764d2551714c5c"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 9px; height: auto"
+              data-block-id="fade13664faf1eea80d243a3caef50a0"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>3.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="code"
+              style="width: 663px; height: 518px; left: 149px; top: 140px"
+              data-block-id="c881e6bbd7a5049638bd5b2b69115613"
+            >
+              <div
+                class="sl-block-content fragment notranslate"
+                style="z-index: 11; font-size: 250%"
+                data-highlight-theme="monokai"
+                data-fragment-index="0"
+              >
+                <pre class="javascript"><code>printTime(1);
+&gt;&gt; 09:05:11
+&gt;&gt; 09:05:12
+&gt;&gt; 09:05:13
+&gt;&gt; 09:05:14
+&gt;&gt; 09:05:15
+&gt;&gt; ...</code></pre>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="72d13c9eb0d1ee700060fac895e460d9"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 91px; height: auto"
+              data-block-id="cccc604d16a39fa9a435fb80b31424fc"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>4.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 676px; left: 142px; top: 241px"
+              data-block-id="ee6b65c91ca1738d94002300e63e9c1d"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>
+                  Use the functionality from the previous exercise to create a
+                  digital clock web page
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="sl-block"
+              data-block-type="shape"
+              style="width: 92px; height: 84px; left: 434px; top: 529px"
+              data-block-id="a2459f6e42d60900519d47ad0a5ffcef"
+              data-name="shape-d8dd35"
+            >
+              <div
+                class="sl-block-content"
+                data-shape-type="arrow-down"
+                data-shape-fill-color="rgb(255, 255, 255)"
+                data-shape-stretch="true"
+                style="z-index: 12"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  width="100%"
+                  height="100%"
+                  preserveaspectratio="none"
+                  viewbox="0 0 92 84"
+                >
+                  <polygon
+                    points="46,84 92,42 64.39999999999999,42 64.39999999999999,0 27.599999999999998,0 27.599999999999998,42 0,42 46,84"
+                    class="shape-element"
+                    fill="rgb(255, 255, 255)"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="c60e975f1f6dd8ed27aafe00d48a8bd0"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 21px; height: auto"
+              data-block-id="b0ec864448ba399a8057828166434cdb"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>4.</h1>
+              </div>
+            </div>
+
+            <div
+              class="sl-block"
+              data-block-type="image"
+              style="
+                width: 758.012px;
+                height: 518px;
+                left: 100.994px;
+                top: 140px;
+              "
+              data-name="image-374813"
+              data-block-id="e6bdcb80d7d4029bdc333af627495872"
+            >
+              <div class="sl-block-content" style="z-index: 11">
+                <img
+                  class=""
+                  data-natural-width="1996"
+                  data-natural-height="1364"
+                  data-lazy-loaded=""
+                  data-src="browser-and-dom-api/e8c14d9ead34cdcbf100847e5061eb08.gif"
+                />
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="6b0e130b9848dd3c96028e819845112c"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 33px; height: auto"
+              data-block-id="3fae9e827fe72e48ddbc76d7aca419bb"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>5.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 676px; left: 142px; top: 186.5px"
+              data-block-id="0bda81cfa776d983e0a369e4e186c258"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>Create a web page with that does the following:</p>
+
+                <ul>
+                  <li>Displays a countdown from 10 to 0</li>
+                  <li>Uses a 1 second delay between each count</li>
+                  <li>
+                    When the countdown reaches zero change the background color
+                    from yellow to green
+                  </li>
+                  <li>
+                    When the countdown reaches zero change the text from the
+                    countdown number to "Done"
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="sl-block"
+              data-block-type="shape"
+              style="width: 92px; height: 84px; left: 434px; top: 560px"
+              data-block-id="84470be4c052d0da1ea68be9f40a7634"
+              data-name="shape-21561c"
+            >
+              <div
+                class="sl-block-content"
+                data-shape-type="arrow-down"
+                data-shape-fill-color="rgb(255, 255, 255)"
+                data-shape-stretch="true"
+                style="z-index: 12"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  width="100%"
+                  height="100%"
+                  preserveaspectratio="none"
+                  viewbox="0 0 92 84"
+                >
+                  <polygon
+                    points="46,84 92,42 64.39999999999999,42 64.39999999999999,0 27.599999999999998,0 27.599999999999998,42 0,42 46,84"
+                    class="shape-element"
+                    fill="rgb(255, 255, 255)"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="900187e41d443f9778d9112362bc2239"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 676px; left: 142px; top: 241px"
+              data-block-id="07490ea69d04084e1024bb026b983b10"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>Create a web page with that does the following:</p>
+
+                <ul>
+                  <li>Displays a countdown from 10 to 0</li>
+                  <li>Uses a 1 second delay between each count</li>
+                  <li>
+                    When the countdown reaches zero change the background color
+                    from yellow to green
+                  </li>
+                  <li>
+                    When the countdown reaches zero change the text from the
+                    countdown number to "Done"
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="sl-block"
+              data-block-type="image"
+              style="
+                width: 738.241px;
+                height: 518px;
+                left: 110.88px;
+                top: 161px;
+                min-width: 1px;
+                min-height: 1px;
+              "
+              data-name="image-3760b5"
+              data-block-id="559de9d28d85aa6b4a9636aaecf04045"
+            >
+              <div class="sl-block-content" style="z-index: 12">
+                <img
+                  class=""
+                  data-natural-width="2038"
+                  data-natural-height="1430"
+                  data-lazy-loaded=""
+                  data-src="browser-and-dom-api/758a9a55ae0cfeb2133b62871e342517.gif"
+                />
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 33px; height: auto"
+              data-block-id="b39902c5bf95ea35c4dbe0b5c873efb4"
+              data-name="text-4aa7c3"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 13"
+              >
+                <h1>5.</h1>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="fc850b40b4ee16fa1813d9fe3a5adae7"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 22px; height: auto"
+              data-block-id="43f5d22d14f1f795fae54267e63254e0"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>6.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              data-block-id="ad904af338c83a9594da7efc3efb3218"
+              style="
+                height: auto;
+                min-width: 30px;
+                min-height: 30px;
+                width: 762px;
+                left: 99px;
+                top: 249px;
+              "
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>Create a new empty page</p>
+
+                <ul>
+                  <li>Add a blue square to the page (50px)</li>
+                  <li>
+                    Make the square move back and forth across the screen
+                    (animation) using only JavaScript
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="29828671a633d15d36b454882d0408b8"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 22px; height: auto"
+              data-block-id="c555698b6d972310b29051cd53f62a60"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>6.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              data-name="text-17e458"
+              style="height: auto; width: 600px; left: 180px; top: 120px"
+              data-block-id="910d49ad38bc3a30c12c05d6f54bbfd2"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>(what it will look like:)</p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="image"
+              data-name="image-744441"
+              data-block-id="8c01953675b467d6e66ad25f8628f541"
+              style="
+                width: 791.365px;
+                height: 518px;
+                left: 88.635px;
+                top: 174px;
+                min-width: 1px;
+                min-height: 1px;
+              "
+            >
+              <div class="sl-block-content" style="z-index: 12">
+                <img
+                  style=""
+                  data-natural-width="1818"
+                  data-natural-height="1190"
+                  data-lazy-loaded=""
+                  data-src="browser-and-dom-api/7520470806f850714e830bd8c87f95f4.gif"
+                />
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="c7cc49c9378a788c4242dbe5b6dd8b35"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 22px; height: auto"
+              data-block-id="e36d6f66c90f48e824bd0f2f2b9684b4"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>7.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 600px; left: 180px; top: 219px"
+              data-block-id="48ddcea571bbdbde5b4d4634f0e33421"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>Create a new empty page</p>
+
+                <ul>
+                  <li>Add a blue square to the page</li>
+                  <li>Add a green square to the page</li>
+                  <li>Add a red square to the page</li>
+                  <li>
+                    Make the squares move back and forth across the screen in
+                    different speeds (animation) using only JavaScript
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              data-name="text-cf3cff"
+              style="height: auto; width: 600px; left: 180px; top: 574.5px"
+              data-block-id="cf6f8ea041bc4ea04fb327bf57f6f6d5"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 12"
+              >
+                <p>Hint: Look up setInterval / setTimeout</p>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="4e0b12f1611cfa3f9e4bdc4015415e7f"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 22px; height: auto"
+              data-block-id="7c6e8418c7efe53708bf03efff868463"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>7.</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              data-name="text-17e458"
+              style="height: auto; width: 600px; left: 180px; top: 120px"
+              data-block-id="83fbeabf6ad677a81d61a9f844535109"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>(what it will look like:)</p>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="image"
+              data-name="image-5095bd"
+              data-block-id="ff1f5f17cad8244edfa873c13a643ba0"
+              style="
+                width: 791.365px;
+                height: 518px;
+                left: 98.3175px;
+                top: 174px;
+                min-width: 1px;
+                min-height: 1px;
+              "
+            >
+              <div class="sl-block-content" style="z-index: 12">
+                <img
+                  style=""
+                  data-natural-width="1818"
+                  data-natural-height="1190"
+                  data-lazy-loaded=""
+                  data-src="browser-and-dom-api/6bbf913b7d78c2ac2d53633ffbcd07e0.gif"
+                />
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="d1568b73a96ebaff8295a80d89d70897"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 9px; height: auto"
+              data-block-id="4f47575cd9a754fda6922cb642fe9812"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>8. (bonus)</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="height: auto; width: 676px; left: 142px; top: 157px"
+              data-block-id="5fd31775e72d903b9c696050759ff493"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="p"
+                data-placeholder-text="Text"
+                style="z-index: 11"
+              >
+                <p>
+                  Create a function printSequence(n, m) that prints every number
+                  in the sequence <strong>n</strong> to <strong>m</strong> with
+                  an increasing delay between the numbers
+                </p>
+
+                <p> </p>
+
+                <ul>
+                  <li>the first element is instant</li>
+                  <li>the second element waits 1 second</li>
+                  <li>the third element waits 2 seconds</li>
+                  <li>the fourth element waits 3 seconds</li>
+                  <li>etc..</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="shape"
+              style="width: 92px; height: 84px; left: 434px; top: 588px"
+              data-block-id="4dcb1c3c78abacd04f240794845ec577"
+            >
+              <div
+                class="sl-block-content"
+                data-shape-type="arrow-down"
+                data-shape-fill-color="rgb(255, 255, 255)"
+                data-shape-stretch="true"
+                style="z-index: 12"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  width="100%"
+                  height="100%"
+                  preserveaspectratio="none"
+                  viewbox="0 0 92 84"
+                >
+                  <polygon
+                    points="46,84 92,42 64.39999999999999,42 64.39999999999999,0 27.599999999999998,0 27.599999999999998,42 0,42 46,84"
+                    class="shape-element"
+                    fill="rgb(255, 255, 255)"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </section>
+          <section
+            data-background-color="#472172"
+            data-id="d1b0fc9c498b04b5c0bbf0bd1578ee2b"
+          >
+            <div
+              class="sl-block"
+              data-block-type="text"
+              style="width: 800px; left: 80px; top: 22px; height: auto"
+              data-block-id="c9bdeab44fb220525b039952ee2a74b7"
+            >
+              <div
+                class="sl-block-content"
+                data-placeholder-tag="h1"
+                data-placeholder-text="Title Text"
+                style="z-index: 10"
+              >
+                <h1>8. (bonus)</h1>
+              </div>
+            </div>
+            <div
+              class="sl-block"
+              data-block-type="code"
+              style="width: 663px; height: 518px; left: 149px; top: 131px"
+              data-block-id="d8400dce1345ba19233d875235c369df"
+            >
+              <div
+                class="sl-block-content fragment notranslate"
+                style="z-index: 11; font-size: 250%"
+                data-highlight-theme="monokai"
+                data-fragment-index="0"
+              >
+                <pre class="javascript"><code>printSequence(3, 7);
+&gt;&gt; 3
+// waits 1 second
+&gt;&gt; 4
+// waits 2 second
+&gt;&gt; 5
+// waits 3 second
+&gt;&gt; 6
+// waits 4 second
+&gt;&gt; 7</code></pre>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      var SLConfig = {
+        deck: {
+          id: 2513544,
+          slug: 'browser-and-dom-api',
+          title: 'Copy of Browser and DOM API',
+          description:
+            "Introduction to the DOM and the other API's of the browser",
+          width: 960,
+          height: 700,
+          margin: 0.05,
+          visibility: 'self',
+          published_at: null,
+          sanitize_messages: null,
+          thumbnail_url:
+            'https://s3.amazonaws.com/media-p.slid.es/thumbnails/25ef454084e72976a14cf7d0a0db5cd9/thumb.jpg?1670174288',
+          view_count: 0,
+          user: {
+            id: 20204,
+            username: 'eiriklv',
+            name: 'Eirik Langholm Vullum',
+            description: 'JavaScript fanatic that loves node.js and React.',
+            thumbnail_url:
+              'https://www.gravatar.com/avatar/be073daacb6ca661aae406636595aa83?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png',
+            account_type: 'pro',
+            team_id: null,
+            settings: {
+              id: 102496,
+              present_controls: false,
+              present_upsizing: true,
+              present_pointer: false,
+              present_notes: true,
+              default_deck_tag_id: null,
+            },
+          },
+          background_transition: 'fade',
+          transition: 'slide',
+          theme_id: null,
+          theme_font: 'montserrat',
+          theme_color: 'cobalt-orange',
+          auto_slide_interval: 0,
+          comments_enabled: true,
+          forking_enabled: false,
+          rolling_links: false,
+          center: false,
+          shuffle: null,
+          should_loop: false,
+          share_notes: null,
+          slide_number: null,
+          slide_count: 16,
+          rtl: false,
+          version: 2,
+          collaborative: false,
+          deck_user_editor_limit: 3,
+          data_updated_at: 1670174337619,
+          font_typekit: null,
+          font_google: null,
+          time_limit: null,
+          navigation_mode: 'default',
+          upsizing_enabled: null,
+          notes: {},
+        },
+      };
+
+      // Use local fonts
+      SLConfig.fonts_url = 'lib/fonts/';
+    </script>
+
+    <script src="lib/reveal.js"></script>
+    <script src="lib/reveal-plugins.js"></script>
+    <script src="lib/offline.js"></script>
+
+    <!-- Initialize the presentation -->
+    <script>
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+        margin: 0.05,
+
+        hash: true,
+        controls: true,
+        progress: true,
+        mouseWheel: false,
+        showNotes: false,
+        slideNumber: false,
+        fragmentInURL: true,
+
+        autoSlide: 0,
+        autoSlideStoppable: true,
+
+        autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+        center: false,
+        shuffle: false,
+        loop: false,
+        rtl: false,
+        navigationMode: 'default',
+
+        transition: 'slide',
+        backgroundTransition: 'fade',
+
+        highlight: {
+          escapeHTML: false,
+        },
+
+        plugins: [RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight],
+      });
+    </script>
+  </body>
+</html>

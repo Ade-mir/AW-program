@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  color: white;
+}
+
+.main-grid {
+  height: 100%;
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.5fr 6fr 1fr;
+}
+
+.header {
+  background-color: rgb(45, 149, 201);
+}
+.nav {
+  background-color: rgb(105, 8, 62);
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.nav ul li {
+  padding: 0 50px;
+}
+
+.main {
+  background-color: rgb(167, 140, 30);
+  display: flex;
+  margin: 0 300px;
+}
+
+.text {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.sidebar {
+  background-color: rgb(13, 56, 94);
+}
+.footer {
+  background-color: rgb(240, 255, 249);
+}

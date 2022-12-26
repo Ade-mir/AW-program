@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Volume Calculator</title>
+    <style>
+      :root {
+        --shadow: 0 1px 5px rgba(255, 0, 0, 0.8);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      #main {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        z-index: 1;
+        height: 100vh;
+      }
+      body {
+        height: 100vh;
+        background-color: rgb(12, 61, 66);
+        color: white;
+        margin: 0;
+      }
+      #height,
+      #width,
+      #depth {
+        width: 200px;
+        border-radius: 0.5rem;
+        border-color: white;
+        height: 2rem;
+      }
+
+      #submit {
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        background-color: white;
+        border-color: white;
+      }
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      label {
+        font-size: 1.5rem;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input:focus {
+        outline: none !important;
+        border: 1px solid red;
+        box-shadow: var(--shadow);
+      }
+      svg {
+        position: absolute;
+      }
+      .botWave {
+        bottom: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#008080"
+        fill-opacity="1"
+        d="M0,96L48,117.3C96,139,192,181,288,213.3C384,245,480,267,576,272C672,277,768,267,864,229.3C960,192,1056,128,1152,122.7C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+      ></path>
+    </svg>
+    <div id="main">
+      <h1 class="title">
+        Funky Box <br />
+        Volume Calculator
+      </h1>
+      <label for="height">Height</label>
+      <input type="number" name="height" id="height" />
+      <label for="width">Width</label>
+      <input type="number" name="width" id="width" />
+      <label for="depth">Depth</label>
+      <input type="number" name="depth" id="depth" />
+      <button id="submit" type="submit">Calculate Results</button>
+      <svg
+        class="botWave"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#008080"
+          fill-opacity="1"
+          d="M0,96L48,117.3C96,139,192,181,288,213.3C384,245,480,267,576,272C672,277,768,267,864,229.3C960,192,1056,128,1152,122.7C1248,117,1344,171,1392,197.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+    <script>
+      const mainNode = document.getElementById('main');
+      let resultNode = document.createElement('h3');
+      mainNode.append(resultNode);
+
+      let values = [0, 0, 0]; //Height, Width, Depth
+
+      const submitButtonNode = document.getElementById('submit');
+      const heightInputNode = document.getElementById('height');
+      const widthInputNode = document.getElementById('width');
+      const depthInputNode = document.getElementById('depth');
+
+      submitButtonNode.addEventListener('click', function () {
+        const newHeightValue = heightInputNode.value;
+        values[0] = newHeightValue;
+
+        const newWidthValue = widthInputNode.value;
+        values[1] = newWidthValue;
+
+        const newDepthValue = depthInputNode.value;
+        values[2] = newDepthValue;
+
+        let boxVolume = values[0] * values[1] * values[2];
+
+        resultNode.innerText = boxVolume;
+      });
+    </script>
+  </body>
+</html>

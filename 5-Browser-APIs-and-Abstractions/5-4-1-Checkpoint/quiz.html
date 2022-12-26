@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        max-height: 100vh;
+        margin: 20vh auto;
+        max-height: 100vh;
+        overflow: hidden;
+        background-color: rgb(28, 138, 151);
+      }
+      #main {
+        text-align: center;
+        margin: 0 auto;
+      }
+      #answerList {
+        list-style: none;
+        padding: 0;
+      }
+      h1 {
+        color: white;
+        font-size: calc(100vw / 20);
+      }
+      h3,
+      h2 {
+        margin: 4% 0 4%;
+        color: white;
+        font-size: calc(100vw / 30);
+      }
+      #startButton {
+        margin: 10% 0 0;
+        width: 50%;
+        height: 50%;
+        font-size: calc(100vw / 20);
+        border-radius: 10px;
+        box-shadow: 3px 5px;
+      }
+      #nextButton,
+      #previousButton {
+        width: 50%;
+        height: 20%;
+        font-size: calc(100vw / 30);
+        border-radius: 10px;
+        box-shadow: 1px 3px;
+      }
+      ul {
+        margin-bottom: 4%;
+      }
+      li {
+        color: white;
+        font-size: calc(100vw / 40);
+        vertical-align: baseline;
+      }
+      input[type='radio'] {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+
+    <script>
+      const mainNode = document.getElementById('main');
+
+      //Script name + questions template
+      let quizTopic = 'Ages';
+      let questions = [
+        {
+          question: 'Hvor gammel er Shahin?',
+          answer: ['24', '29', '27', '78'],
+          trueIndex: 2,
+        },
+        {
+          question: 'Hvor gammel er Eirik?',
+          answer: ['200', '30', '2', '29'],
+          trueIndex: 3,
+        },
+        {
+          question: 'Hvor gammel er Ademir?',
+          answer: ['80', '30', '24', '78'],
+          trueIndex: 1,
+        },
+      ];
+      // correctAnswer = trueIndex;
+      // console.log(questions[1].answer[correctAnswer]);
+
+      function renderHome() {
+        mainNode.innerHTML = `
+      <h1>Welcome to the quiz about ${quizTopic}!</h1>
+      <button id="startButton">Start Quiz</button>
+      `;
+
+        const quizPage = document.getElementById('startButton');
+        quizPage.addEventListener('click', function () {
+          renderQuiz();
+        });
+      }
+      renderHome();
+
+      let questionCounter = 0;
+      let totalScore = 0;
+
+      function renderFinalPage() {
+        mainNode.innerHTML = `
+     <h1>Quiz about: ${quizTopic} is completed!</h1>
+     <h2>Your final score is: ${totalScore} out of ${questions.length}</h2>
+      `;
+      }
+
+      function renderQuiz() {
+        mainNode.innerHTML = `
+      <h1>Quiz: ${quizTopic}</h1>
+      <h3>Question: ${questions[questionCounter].question}</h3>
+      <ul id="answerList">
+        <li> <b>A:</b>
+          <input type="radio" id="answerOne" value="0" name="answer">
+          <label for="answerOne">${questions[questionCounter].answer[0]}</label>
+        </li>
+        <li> <b>B:</b>
+          <input type="radio" id="answerTwo" value="1" name="answer">
+          <label for="answerTwo">${questions[questionCounter].answer[1]}</label>
+        </li>
+        <li> <b>C:</b>
+          <input type="radio" id="answerThree" value="2" name="answer">
+          <label for="answerThree">${questions[questionCounter].answer[2]}</label>
+        </li>
+        <li> <b>D:</b>
+          <input type="radio" id="answerFour" value="3" name="answer">
+          <label for="answerFour">${questions[questionCounter].answer[3]}</label>
+        </li>
+      </ul>
+      <button id="nextButton">Next question</button>
+      `;
+        const nextButtonNode = document.getElementById('nextButton');
+        nextButtonNode.addEventListener('click', function () {
+          let submittedAnswer = document.querySelector(
+            'input[type=radio]:checked'
+          );
+
+          let correctAnswer = questions[questionCounter].trueIndex;
+          if (questionCounter == questions.length - 1) {
+            if (submittedAnswer.value == correctAnswer) {
+              totalScore += 1;
+            }
+            renderFinalPage();
+          } else {
+            if (submittedAnswer.value == correctAnswer) {
+              totalScore += 1;
+            }
+
+            console.log(submittedAnswer.value);
+            console.log(totalScore);
+            questionCounter++;
+            renderQuiz();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+.img-1 {
+  width: 100%;
+  max-width: 400px;
+}
+
+.fav-animal {
+  margin: 20px 50px;
+}

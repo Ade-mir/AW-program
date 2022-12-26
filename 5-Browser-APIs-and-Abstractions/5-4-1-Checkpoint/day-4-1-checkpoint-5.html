@@ -1,0 +1,159 @@
+<!--
+Add a <script> tag and show (using JavaScript) how you can find the following elements using the DOM API: (Note: You are not allowed to make any changes to the HTML inside <body>, like adding classes or ids):
+    
+The main title (<h1 class="title">Things I have learned this week</h1>).
+The subtitle (<h3 class="subtitle">Week 9 of the Academy Java Program</h3>)
+The list of items (<ul id="items">)
+The last item in the list (<li>DOM</li>)
+
+  -->
+
+<!-- <html>
+  <head>
+    <title>Things I Have Learned This Week</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1 class="title">Things I have learned this week</h1>
+      <h3 class="subtitle">Week 9 of the Academy Java Program</h3>
+      <ul id="items">
+        <li>JavaScript Syntax</li>
+        <li>Functions and Closures</li>
+        <li>Object and Classes</li>
+        <li>Array Methods</li>
+        <li>DOM</li>
+      </ul>
+    </div>
+    <script>
+      const mainNode = document.getElementById('main');
+      const titleNode = document.querySelector('.title');
+      const subtitleNode = document.querySelector('.subtitle');
+      const itemsNode = document.querySelector('#items');
+      console.log(titleNode);
+      console.log(subtitleNode);
+      console.log(itemsNode);
+      console.log(itemsNode.children[4]);
+    </script>
+  </body>
+</html> -->
+
+<!-- 1-2. Using the provided starting point - recreate the expected end result by using JavaScript (DOM API). You can add a <script> tag as necessary. You are not allowed to use .innerHTML other than for setting text inside elements.
+
+    Starting point: -->
+
+<html>
+  <head>
+    <title>Things I Have Learned This Week</title>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script>
+      const mainNode = document.getElementById('main');
+      let h1Node = document.createElement('h1');
+      let h2Node = document.createElement('h2');
+      let ulNode = document.createElement('ul');
+      let liNode = document.createElement('li');
+      liNode.innerHTML = 'JavaScript Syntax';
+      let liNode2 = document.createElement('li');
+      liNode2.innerHTML = 'Functions and Closures';
+      let liNode3 = document.createElement('li');
+      liNode3.innerHTML = 'Object and Classes';
+      let liNode4 = document.createElement('li');
+      liNode4.innerHTML = 'Array Methods';
+      let liNode5 = document.createElement('li');
+      liNode5.innerHTML = 'DOM';
+
+      ulNode.append(liNode, liNode2, liNode3, liNode4);
+
+      h1Node.setAttribute('class', 'title');
+      h1Node.innerHTML = 'Things I have learned this week';
+      h2Node.setAttribute('class', 'subtitle');
+      h2Node.innerHTML = 'Week 9 of the Academy Java Program';
+      h2Node.innerHTML = 'Week 9 of the Academy Java Program';
+
+      mainNode.append(h1Node, h2Node, ulNode);
+
+      console.log(mainNode);
+    </script>
+  </body>
+</html>
+
+<!-- 1-3. Using the starting point - add the described functionality to the page. You can add a <script> as necessary.
+
+Starting point: -->
+
+<html>
+  <head>
+    <title>Things I Have Learned This Week</title>
+    <style>
+      .biggerText {
+        font-size: 40px;
+      }
+      .hiddenElement {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1 class="title">Things I have learned this week</h1>
+      <h3 class="subtitle">Week 9 of the Academy Java Program</h3>
+      <ul id="items">
+        <li>JavaScript Syntax</li>
+        <li>Functions and Closures</li>
+        <li>Object and Classes</li>
+        <li>Array Methods</li>
+        <li>DOM</li>
+      </ul>
+    </div>
+    <script>
+      const ulNode = document.getElementById('items');
+      const mainNode = document.getElementById('main');
+
+      const buttonNode = document.createElement('button');
+      buttonNode.innerHTML = 'Hide list';
+
+      mainNode.append(buttonNode);
+
+      const buttonNode2 = document.createElement('button');
+      buttonNode2.innerHTML = 'show list';
+      buttonNode2.setAttribute('class', 'hiddenElement');
+
+      mainNode.append(buttonNode2);
+
+      ulNode.children[0].addEventListener('click', function (event) {
+        ulNode.children[0].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[1].addEventListener('click', function (event) {
+        ulNode.children[1].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[2].addEventListener('click', function (event) {
+        ulNode.children[2].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[3].addEventListener('click', function (event) {
+        ulNode.children[3].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[4].addEventListener('click', function (event) {
+        ulNode.children[4].setAttribute('class', 'biggerText');
+      });
+
+      function hideList() {
+        buttonNode.addEventListener('click', function () {
+          ulNode.setAttribute('class', 'hiddenElement');
+          buttonNode.setAttribute('class', 'hiddenElement');
+          buttonNode2.removeAttribute('class', 'hiddenElement');
+        });
+      }
+      hideList();
+
+      function showList() {
+        buttonNode2.addEventListener('click', function () {
+          ulNode.removeAttribute('class', 'hiddenElement');
+          buttonNode.removeAttribute('class', 'hiddenElement');
+          buttonNode2.setAttribute('class', 'hiddenElement');
+        });
+      }
+      showList();
+    </script>
+  </body>
+</html>

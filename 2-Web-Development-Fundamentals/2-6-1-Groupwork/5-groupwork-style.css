@@ -1,0 +1,48 @@
+body {
+  background: rgb(54, 89, 120);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: bolder;
+  color: rgb(5, 45, 5);
+}
+
+#chimney {
+  color: rgb(34, 16, 16);
+  height: 200px;
+}
+
+.jumpingSanta {
+  padding: 20px;
+}
+
+#santa {
+  height: 300px;
+  transition-timing-function: ease-in-out;
+  transition: height 2s;
+  animation-name: moveSanta;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes moveSanta {
+  0% {
+    transform: translate(0, 0);
+    height: 300px;
+  }
+  25% {
+    transform: translate(25px, 100px);
+    height: 200px;
+  }
+  50% {
+    transform: translate(25px, 150px);
+    height: 150px;
+  }
+  100% {
+    transform: translate(50px, 200px);
+    height: 100px;
+  }
+}

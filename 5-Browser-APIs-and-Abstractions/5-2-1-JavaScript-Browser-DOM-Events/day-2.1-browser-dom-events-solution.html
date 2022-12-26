@@ -1,0 +1,348 @@
+<!-- 1. -->
+<html>
+  <head>
+    <title>Solution</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="heading">Heading</h1>
+      <h2 id="subheading">Subheading</h2>
+      <ul class="itemlist">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <button id="add">Add item</button>
+    </div>
+    <script>
+      const listNode = document.querySelector('.itemlist');
+      listNode.addEventListener('click', function (event) {
+        if (event.target === event.currentTarget) {
+          return;
+        }
+        event.target.remove();
+      });
+
+      const addButtonNode = document.getElementById('add');
+      addButtonNode.addEventListener('click', function (event) {
+        const newItemNode = document.createElement('li');
+        newItemNode.innerText = 'Item';
+        listNode.append(newItemNode);
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 2. -->
+<html>
+  <head>
+    <title>Solution</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="heading">Heading</h1>
+      <h2 id="subheading">Subheading</h2>
+      <ul class="itemlist">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <button id="reset">Reset</button>
+    </div>
+    <script>
+      function getRandomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      const listNode = document.querySelector('.itemlist');
+      listNode.addEventListener('click', function (event) {
+        if (event.target === event.currentTarget) {
+          return;
+        }
+        const red = getRandomInRange(0, 255);
+        const green = getRandomInRange(0, 255);
+        const blue = getRandomInRange(0, 255);
+        event.target.style.color =
+          'rgb(' + red + ',' + green + ',' + blue + ')';
+      });
+
+      const resetButtonNode = document.getElementById('reset');
+      resetButtonNode.addEventListener('click', function (event) {
+        Array.from(listNode.children).forEach(function (child) {
+          child.style.color = '#000';
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 3. -->
+<html>
+  <head>
+    <title>Solution</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #directions {
+        height: 10vh;
+      }
+      #bounds {
+        position: relative;
+        height: 90vh;
+        border: 1px solid #000;
+      }
+      #box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="directions">
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+      </div>
+      <div id="bounds">
+        <div id="box"></div>
+      </div>
+    </div>
+    <script>
+      const step = 20;
+      let x = 0;
+      let y = 0;
+
+      const boxNode = document.getElementById('box');
+      const boundsNode = document.getElementById('bounds');
+
+      const directionsNode = document.getElementById('directions');
+      directionsNode.addEventListener('click', function (event) {
+        if (event.currentTarget === event.target) {
+          return;
+        }
+
+        const direction = event.target.id;
+        let nextX = x;
+        let nextY = y;
+
+        switch (direction) {
+          case 'up':
+            nextY = y - step;
+            break;
+          case 'down':
+            nextY = y + step;
+            break;
+          case 'left':
+            nextX = x - step;
+            break;
+          case 'right':
+            nextX = x + step;
+            break;
+        }
+
+        if (
+          nextY > 0 &&
+          nextY <= boundsNode.getBoundingClientRect().height - 50
+        ) {
+          y = nextY;
+          boxNode.style.top = nextY;
+        }
+        if (
+          nextX > 0 &&
+          nextX <= boundsNode.getBoundingClientRect().width - 50
+        ) {
+          x = nextX;
+          boxNode.style.left = nextX;
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 4. -->
+<html>
+  <head>
+    <title>Solution</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #bounds {
+        position: relative;
+        height: 90vh;
+        border: 1px solid #000;
+      }
+      #box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="directions">
+        <label>
+          Step length:
+          <input id="step" type="number" value="20" />
+        </label>
+      </div>
+      <div id="bounds">
+        <div id="box"></div>
+      </div>
+    </div>
+    <script>
+      let x = 0;
+      let y = 0;
+
+      const boxNode = document.getElementById('box');
+      const boundsNode = document.getElementById('bounds');
+
+      window.addEventListener('keypress', function (event) {
+        if (event.currentTarget === event.target) {
+          return;
+        }
+
+        const stepInput = document.getElementById('step');
+        const step = Number(stepInput.value);
+
+        const direction = event.key;
+        let nextX = x;
+        let nextY = y;
+
+        switch (direction) {
+          case 'w':
+            nextY = y - step;
+            break;
+          case 's':
+            nextY = y + step;
+            break;
+          case 'a':
+            nextX = x - step;
+            break;
+          case 'd':
+            nextX = x + step;
+            break;
+        }
+
+        if (
+          nextY > 0 &&
+          nextY <= boundsNode.getBoundingClientRect().height - 50
+        ) {
+          y = nextY;
+          boxNode.style.top = nextY;
+        }
+        if (
+          nextX > 0 &&
+          nextX <= boundsNode.getBoundingClientRect().width - 50
+        ) {
+          x = nextX;
+          boxNode.style.left = nextX;
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 5. -->
+<html>
+  <head>
+    <title>Solution</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .box {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 20px;
+      }
+
+      .square {
+      }
+
+      .circle {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="buttons">
+      <select name="color" id="color">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <select name="shape" id="shape">
+        <option value="square">Square</option>
+        <option value="circle">Circle</option>
+      </select>
+      <button id="add">Add shape</button>
+    </div>
+    <div id="shapes"></div>
+    <script>
+      let colorSelectNode = document.getElementById('color');
+      let shapeSelectNode = document.getElementById('shape');
+      let addButtonNode = document.getElementById('add');
+      let shapesNode = document.getElementById('shapes');
+
+      let selectedShape = 'square';
+      let selectedColor = 'red';
+
+      colorSelectNode.addEventListener('change', function (event) {
+        selectedColor = event.target.value;
+      });
+
+      shapeSelectNode.addEventListener('change', function (event) {
+        selectedShape = event.target.value;
+      });
+
+      addButtonNode.addEventListener('click', function () {
+        let newShapeNode = document.createElement('div');
+        newShapeNode.classList.add('box');
+        newShapeNode.classList.add(selectedShape);
+        newShapeNode.style.backgroundColor = selectedColor;
+        shapesNode.append(newShapeNode);
+      });
+
+      shapesNode.addEventListener('click', function (event) {
+        if (event.target === event.currentTarget) {
+          return;
+        }
+
+        event.target.remove();
+      });
+    </script>
+  </body>
+</html>

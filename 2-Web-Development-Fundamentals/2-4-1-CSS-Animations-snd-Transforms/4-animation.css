@@ -1,0 +1,151 @@
+/* POPUPS */
+
+body {
+  overflow: hidden;
+}
+
+@keyframes home-alone {
+  0% {
+    bottom: -1000px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+
+@keyframes elf {
+  0% {
+    bottom: -1000px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+@keyframes gremlin {
+  0% {
+    bottom: -1000px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+@keyframes die-hard {
+  0% {
+    left: -1200px;
+  }
+  100% {
+    left: -100px;
+  }
+}
+
+#home-alone {
+  position: absolute;
+  left: 20%;
+  scale: 0.5;
+  bottom: 1000px;
+  animation-name: home-alone;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#elf {
+  right: 20%;
+  scale: 0.5;
+  position: absolute;
+  bottom: -1000px;
+  animation-name: elf;
+  animation-duration: 2.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#gremlin {
+  right: 50%;
+  scale: 0.5;
+  position: absolute;
+  bottom: -1000px;
+  animation-name: elf;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#die-hard {
+  position: absolute;
+  scale: 0.2;
+  top: 200px;
+  left: -1200px;
+  animation-name: die-hard;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* KEVIN */
+
+.kevin {
+  border-radius: 50%;
+
+  animation-name: kevin;
+
+  animation-duration: 3s;
+
+  animation-iteration-count: infinite;
+
+  animation-direction: alternate;
+
+  animation-timing-function: ease-in-cubic-bezier(0.06, 1.06, 0, 1.16);
+
+  width: 100px;
+
+  height: auto;
+
+  position: absolute;
+
+  /*  transition: transform 3s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}
+
+@keyframes kevin {
+  0% {
+    left: 0;
+
+    top: 0;
+  }
+
+  25% {
+    left: 12.5vw;
+
+    top: calc(20vh - 150px);
+
+    rotate: 180deg;
+  }
+
+  50% {
+    left: 50vw;
+
+    top: 50vh;
+
+    rotate: -360deg;
+  }
+
+  75% {
+    left: 75vw;
+
+    top: calc(100vh - 150px);
+
+    rotate: -180deg;
+  }
+
+  85% {
+    rotate: 567deg;
+  }
+
+  100% {
+    top: 0;
+
+    left: calc(100vw - 150px);
+
+    rotate: -360deg;
+  }
+}

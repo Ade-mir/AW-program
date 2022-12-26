@@ -1,0 +1,217 @@
+<!-- 1. -->
+function delayedPrint(str, delay) { setTimeout(function () { console.log(str) },
+delay * 1000); }
+
+<!-- 2. -->
+function printSequence(n, m, delay) { setTimeout(function () { console.log(n);
+printSequence(n + 1, m, delay); }, delay * 1000); }
+
+<!-- 3. -->
+function printTime(interval) { function zeroPad(strOrNum, len) { let str =
+strOrNum.toString(); return "0".repeat(len - str.length) + str; }
+setInterval(function () { const currentDate = new Date(); const formattedTime =
+zeroPad(currentDate.getHours(), 2) + ':' + zeroPad(currentDate.getMinutes(), 2)
++ ':' + zeroPad(currentDate.getSeconds(), 2); console.log(formattedTime); },
+interval * 1000); }
+
+<!-- 4. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        height: 100vh;
+      }
+      body {
+        height: 100vh;
+        margin: 0;
+      }
+      #clock {
+        background-color: yellow;
+        font-size: 150px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    <script>
+      function zeroPad(strOrNum, len) {
+        let str = strOrNum.toString();
+        return '0'.repeat(len - str.length) + str;
+      }
+
+      let countDownInterval = setInterval(function () {
+        const now = new Date();
+        const time = `${zeroPad(now.getHours(), 2)}:${zeroPad(
+          now.getMinutes(),
+          2
+        )}:${zeroPad(now.getSeconds(), 2)}`;
+        document.getElementById('clock').innerHTML = time;
+      }, 1000);
+    </script>
+  </body>
+</html>
+
+<!-- 5 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        height: 100vh;
+      }
+      body {
+        height: 100vh;
+        margin: 0;
+      }
+      #count {
+        background-color: yellow;
+        font-size: 150px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="count">10</div>
+    <script>
+      let count = 10;
+
+      let countDownInterval = setInterval(function () {
+        count--;
+        document.getElementById('count').innerHTML = count;
+
+        if (count <= 0) {
+          clearInterval(countDownInterval);
+          document.getElementById('count').innerHTML = 'Done';
+          document.getElementById('count').style.backgroundColor = 'green';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
+
+<!-- 6 -->
+<html>
+  <body>
+    <div id="box"></div>
+    <script>
+      // Make and style the initial blue box
+      var boxNode = document.getElementById('box');
+      boxNode.style.position = 'absolute';
+      boxNode.style.left = '0px';
+      boxNode.style.width = '40px';
+      boxNode.style.height = '40px';
+      boxNode.style.backgroundColor = 'blue';
+
+      // Box state
+      var position = 0; // current position
+      var step = 10; // how far to move each time
+      var direction = 1; // 1 or -1
+
+      // Function to move the box
+      function moveBox() {
+        if (position > window.innerWidth - 40) {
+          direction = -1;
+        }
+        if (position < 0) {
+          direction = 1;
+        }
+
+        position = position + step * direction;
+
+        boxNode.style.left = `${position}px`;
+      }
+
+      setInterval(moveBox, 20);
+    </script>
+  </body>
+</html>
+
+<!-- 7 -->
+<html>
+  <body>
+    <div id="firstbox"></div>
+    <div id="secondbox"></div>
+    <div id="thirdbox"></div>
+    <script>
+      function styleBox(boxNode, top, color) {
+        boxNode.style.position = 'absolute';
+        boxNode.style.left = '0px';
+        boxNode.style.top = `${top}px`;
+        boxNode.style.width = '40px';
+        boxNode.style.height = '40px';
+        boxNode.style.backgroundColor = color;
+      }
+
+      function moveBox(box, index) {
+        // check if we need to change direction
+        if (box.position > window.innerWidth - 40) {
+          box.direction = -1;
+        }
+
+        // check if we need to change direction
+        if (box.position < 0) {
+          box.direction = 1;
+        }
+
+        // update the box position state
+        box.position = box.position + box.step * box.direction;
+
+        // apply the box position to the box style
+        box.node.style.left = `${box.position}px`;
+      }
+
+      // Box states
+      var boxes = [
+        {
+          node: document.getElementById('firstbox'),
+          position: 0,
+          step: 10,
+          direction: 1,
+        },
+        {
+          node: document.getElementById('secondbox'),
+          position: 0,
+          step: 20,
+          direction: 1,
+        },
+        {
+          node: document.getElementById('thirdbox'),
+          position: 0,
+          step: 30,
+          direction: 1,
+        },
+      ];
+
+      // Style boxes initially
+      styleBox(boxes[0].node, 0, 'blue');
+      styleBox(boxes[1].node, 100, 'red');
+      styleBox(boxes[2].node, 200, 'green');
+
+      // Run update loop
+      setInterval(function () {
+        boxes.forEach(moveBox);
+      }, 20);
+    </script>
+  </body>
+</html>
+
+<!-- 8. -->
+function printSequence(n, m, delay) { var delay = delay || 0; if (n > m) {
+return; } setTimeout(function () { console.log(n); printSequence(n + 1, m, delay
++ 1); }, delay * 1000); }

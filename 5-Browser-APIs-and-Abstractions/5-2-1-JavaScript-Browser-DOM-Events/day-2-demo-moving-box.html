@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #box {
+        height: 50px;
+        background-color: blue;
+        position: relative;
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 50px; height: 50px;" id="box"></div>
+    <script>
+      // State
+      let size = 50;
+      let position = 0;
+      let direction = -1;
+
+      let boxNode = document.getElementById('box');
+
+      // Update loop
+      setInterval(function () {
+        boxNode.style.width = size + 'px';
+        boxNode.style.height = size + 'px';
+        size++;
+
+        if (position >= window.innerWidth - parseInt(boxNode.style.width)) {
+          direction = 'left';
+        } else if (position <= 0) {
+          direction = 'right';
+        }
+
+        if (direction == 'right') {
+          position = position + 1;
+        } else if (direction == 'left') {
+          position = position - 1;
+        }
+
+        boxNode.style.left = position + "px";
+      }, 10);
+    </script>
+  </body>
+</html>

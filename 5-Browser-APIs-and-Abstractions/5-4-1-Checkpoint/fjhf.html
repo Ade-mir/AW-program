@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Things I Have Learned This Week</title>
+    <style>
+      .biggerText {
+        font-size: 40px;
+      }
+      .hiddenElement {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1 class="title">Things I have learned this week</h1>
+      <h3 class="subtitle">Week 9 of the Academy Java Program</h3>
+      <ul id="items">
+        <li>JavaScript Syntax</li>
+        <li>Functions and Closures</li>
+        <li>Object and Classes</li>
+        <li>Array Methods</li>
+        <li>DOM</li>
+      </ul>
+    </div>
+    <script>
+      const ulNode = document.getElementById('items');
+      const mainNode = document.getElementById('main');
+
+      const buttonNode = document.createElement('button');
+      buttonNode.innerHTML = 'Hide list';
+
+      mainNode.append(buttonNode);
+
+      const buttonNode2 = document.createElement('button');
+      buttonNode2.innerHTML = 'show list';
+      buttonNode2.setAttribute('class', 'hiddenElement');
+
+      mainNode.append(buttonNode2);
+
+      ulNode.children[0].addEventListener('click', function (event) {
+        ulNode.children[0].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[1].addEventListener('click', function (event) {
+        ulNode.children[1].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[2].addEventListener('click', function (event) {
+        ulNode.children[2].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[3].addEventListener('click', function (event) {
+        ulNode.children[3].setAttribute('class', 'biggerText');
+      });
+      ulNode.children[4].addEventListener('click', function (event) {
+        ulNode.children[4].setAttribute('class', 'biggerText');
+      });
+
+      function hideList() {
+        buttonNode.addEventListener('click', function () {
+          ulNode.setAttribute('class', 'hiddenElement');
+          buttonNode.setAttribute('class', 'hiddenElement');
+          buttonNode2.removeAttribute('class', 'hiddenElement');
+        });
+      }
+      hideList();
+
+      function showList() {
+        buttonNode2.addEventListener('click', function () {
+          ulNode.removeAttribute('class', 'hiddenElement');
+          buttonNode.removeAttribute('class', 'hiddenElement');
+          buttonNode2.setAttribute('class', 'hiddenElement');
+        });
+      }
+      showList();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<button class="button">Click me</button>
+<button class="button">Click me</button>
+
+<script>
+  let buttonNode = document.querySelectorAll('.button');
+  buttonNode[0].addEventListener('click', () => {
+    alert('hello');
+  });
+  buttonNode[1].addEventListener('click', () => {
+    alert('hello');
+  });
+  console.log(Array.from(buttonNode));
+</script>

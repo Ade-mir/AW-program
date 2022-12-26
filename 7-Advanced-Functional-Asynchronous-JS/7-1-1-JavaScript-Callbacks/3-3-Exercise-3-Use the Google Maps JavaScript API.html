@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_fghSuT2l5ISd_tPq45DYloBvPsLlJGc"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      const mapContainerNode = document.getElementById('map');
+
+      let map;
+
+      function initializeMap(latitude, longitude) {
+        // The new operator lets developers create an instance of a user-defined object type or of one of the built-in object types that has a constructor function. https://developers.google.com/maps/documentation/javascript/overview
+
+        // The Maps JavaScript API lets you customize maps with your own content and imagery for display on web pages and mobile devices.
+
+        // The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+        map = new google.maps.Map(mapContainerNode, {
+          center: { lat: latitude, lng: longitude },
+          zoom: 15,
+        });
+      }
+
+      // The Navigator interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
+
+      // The Geolocation.getCurrentPosition() method is used to get the current position of the device.
+
+      navigator.geolocation.getCurrentPosition(
+        function (myPosition) {
+          initializeMap(
+            myPosition.coords.latitude,
+            myPosition.coords.longitude
+          );
+        },
+        function (err) {
+          console.log(err);
+        }
+      );
+
+      initMap();
+    </script>
+  </body>
+</html>

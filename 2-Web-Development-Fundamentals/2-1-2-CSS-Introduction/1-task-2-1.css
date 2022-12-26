@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: relative;
+  /* background-image: url(/1-task-1-1-images/nasa-yZygONrUBe8-unsplash.jpg); */
+  object-fit: cover;
+  background-size: cover;
+  max-width: 100vw;
+  height: 100vh;
+  background-position: top;
+  z-index: 1;
+}
+
+.company-name {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  flex: 3;
+  text-align: left;
+}
+
+.company-name a {
+  color: white;
+  text-decoration: none;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+nav {
+  margin: 0;
+  text-align: right;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(0deg, rgba(0, 0, 255, 0), rgb(0, 0, 0));
+  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  list-style-type: none;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+video {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+  margin-top: 180px;
+  text-transform: capitalize;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-button-div {
+  text-align: center;
+}
+
+.hero-button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.hero-button:hover {
+  background-color: rgb(32, 32, 32);
+  color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.company-info {
+  display: flex;
+}
+
+.company-info-1,
+.company-info-2 {
+  flex: 1;
+  text-align: left;
+  text-align: justify;
+  margin: 30px 30px 0 30px;
+}
+
+.company-info-1 h1,
+.company-info-2 h1 {
+  flex: 1;
+  text-align: center;
+}
+
+.company-info img {
+  width: 100%;
+}
+
+footer {
+  color: rgba(0, 0, 0, 0.669);
+  margin: 0;
+  padding: 50px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.477), rgb(255, 255, 255));
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-around;
+}

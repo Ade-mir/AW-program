@@ -1,0 +1,21 @@
+{
+  "name": "exercises-composition",
+  "version": "1.0.0",
+  "description": "Exercises",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base public --watch-poll --port 3000"
+  },
+  "author": "Eirik Vullum <evullum@gmail.com> (http://www.vullum.io/)",
+  "license": "ISC",
+  "dependencies": {
+    "md5": "^2.0.0",
+    "sort-by": "^1.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "5.x",
+    "babel-loader": "5.x",
+    "webpack": "1.x",
+    "webpack-dev-server": "1.14.x"
+  }
+}

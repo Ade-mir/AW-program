@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        padding: 20px;
+        background-color: blue;
+      }
+      #one {
+        margin: 10px;
+        background-color: aqua;
+      }
+      #two {
+        margin: 10px;
+        background-color:chartreuse;
+      }
+      #three {
+        margin: 10px;
+        background-color:darkorchid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="one">First</div>
+      <div id="two">Second</div>
+      <div id="three">Third</div>
+    </div>
+    <script>
+      let thirdBoxNode = document.getElementById('three');
+
+      thirdBoxNode.addEventListener('click', function (event) {
+        console.log('clicked the magic box');
+        event.stopPropagation();
+      });
+
+      let containerNode = document.getElementById('container');
+
+      containerNode.addEventListener('click', function (event) {
+        if (event.target === event.currentTarget) {
+          return;
+        }
+
+        console.log('clicked box with id:', event.target.id);
+      });
+    </script>
+  </body>
+</html>

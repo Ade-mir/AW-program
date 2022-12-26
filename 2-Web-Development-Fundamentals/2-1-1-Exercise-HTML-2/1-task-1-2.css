@@ -1,0 +1,93 @@
+body {
+  margin: 0 5% 5% 5%;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+header {
+  max-width: 100%;
+  background-color: rgb(42, 42, 42);
+  margin-top: 0;
+  height: 50vh;
+}
+
+.hero {
+  max-width: 100%;
+  width: 95vw;
+  height: 40vh;
+  object-fit: cover;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3% 5% 3% 5%;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav li {
+  list-style-type: none;
+  margin-right: auto;
+}
+
+.two-column-split {
+  display: flex;
+}
+
+.col-1 {
+  flex: 4;
+  margin-right: 5%;
+}
+
+.col-2 {
+  flex: 2;
+  margin-left: 5%;
+}
+
+th {
+  text-align: left;
+  padding: 0;
+}
+
+table th {
+  font-size: 1.5rem;
+}
+
+table {
+  background-color: rgb(255, 251, 246);
+  border: 2px rgb(179, 179, 179) solid;
+}
+
+table a {
+  color: black;
+}
+
+.bold-day {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 0px 10px 0;
+  background-color: rgba(224, 255, 255, 0.623);
+}
+
+body > div > div.column.col-2 > table > tbody > tr:nth-child(1) {
+  background-color: rgba(255, 208, 208, 0.491);
+}
+
+body
+  > div
+  > div.column.col-2
+  > table
+  > tbody
+  > tr:nth-child(1)
+  > th:nth-child(1) {
+  background-color: rgba(200, 249, 249, 0.623);
+}

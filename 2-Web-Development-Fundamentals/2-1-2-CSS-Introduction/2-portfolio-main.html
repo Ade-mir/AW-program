@@ -1,0 +1,76 @@
+<!--
+    
+Positioning
+
+STATIC
+By default every element has a;
+
+.container {
+position: static; 
+}
+
+RELATIVE
+Position an element relative to its default position.
+
+.container {
+    position: relative;
+    top: 2px;
+    left: 40px;
+}
+
+"id" is for one HTML element, but "class" is for as many as you want.
+
+FIXED
+Position is relative to the viewport. Like a fixed NAV bar that stays in the same place when you scroll.
+
+.container {
+    position: fixed;
+    top: 2px;
+    left: 40px;
+}
+
+ABSOLUTE
+Position is absolute relative to the nearest parent element that has a position of relative, or the entire document if no parent document has position relative.
+
+.container {
+    position: absolute;
+    top: 2px;
+    left: 40px;
+}
+
+STICKY
+Combination of position relative and position fixed. Switches between depending on your scroll
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ademir Alijagic's Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <div class="site-logo"><p>Ademir Alijagic</p></div>
+      <nav>
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <a class="github-logo" href="https://github.com/Ade-mir"
+            ><img src="image destination"
+          /></a>
+        </ul>
+      </nav>
+    </header>
+    <footer>
+      <ul>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
