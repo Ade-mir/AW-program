@@ -26,24 +26,27 @@
 
 // printTable(4, 2);
 
-let tableStart = [];
-// let multipliedTable = tableStart;
-
-// function printTable(n, m) {
-//   for (i = 2; i < n; ++i) {
-//     tableStart.push(i);
-//     console.log(multipliedTable);
-//     multipliedTable = tableStart.map(function (element) {
-//       return element * i;
-//     });
-//   }
-// }
+function printColumns(m) {
+  let tableStart = [];
+  for (i = 1; i <= m; i++) {
+    tableStart.push(i);
+  }
+  return tableStart;
+}
 
 function printTable(n, m) {
-  for (i = 0; i < n; i++) {
-    tableStart.push(i);
-    console.log(tableStart);
+  printColumns(m);
+}
+
+function printRow(n, m) {
+  for (i = 0; i < n; ++i) {
+    console.log(printColumns(m));
+    // multipliedTable = tableStart.map(function (element) {
+    //   return element * i;
+    // });
   }
 }
 
-printTable(4, 2);
+// printColumns(8);
+// printTable(10);
+printRow(2, 4);
