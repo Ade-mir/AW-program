@@ -10,4 +10,4 @@ function printPattern(n, m) {
   }
 }
 
-printPattern(10, 15);
+printPattern(2, 15);
