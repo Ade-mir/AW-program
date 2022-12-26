@@ -1,3 +1,5 @@
+// Print all numbers from 0 to 20, skip even numbers.
+
 let i = -20;
 
 while (i <= 20) {

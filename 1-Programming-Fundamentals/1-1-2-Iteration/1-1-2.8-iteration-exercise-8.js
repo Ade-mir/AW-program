@@ -1,4 +1,4 @@
-// MAKE A PATTERN
+// Print pattern 1
 
 let i = 0;
 
