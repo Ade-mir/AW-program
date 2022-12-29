@@ -1,0 +1,23 @@
+// Return true if the number is a palindrome.
+
+// 12345
+// racecar
+// RaceCar
+// Rats Live onno Evil star
+
+function isPalindrome(num) {
+  let str = num.toString().toLowerCase().replace(/\s+/g, '');
+  let center = Math.ceil(str.length / 2);
+
+  for (let i = 0; i < center; i++) {
+    let left = str.charAt(i);
+    let right = str.charAt(str.length - 1 - i);
+
+    if (left != right) {
+      return false;
+    }
+  }
+  return true;
+}
+
+isPalindrome('racecar');
