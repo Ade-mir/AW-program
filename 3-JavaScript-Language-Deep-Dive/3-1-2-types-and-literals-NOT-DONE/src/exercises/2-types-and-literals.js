@@ -16,11 +16,11 @@ var { testCase, assert, assertEquals } = require('../lib/test-runner');
 // https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
 testCase('Variables', {
   'Declared and initialized variables': function () {
-    assert(a == REPLACE_ME, 'Before declaration');
+    assert(a == undefined, 'Before declaration');
 
     var a = 42;
 
-    assert(a == REPLACE_ME, 'After declaration');
+    assert(a == 42, 'After declaration');
   },
 });
 
@@ -29,20 +29,20 @@ testCase('Strings', {
   'typeof result': function () {
     var str = 'Welcome to the world of tomorrow!';
 
-    assert(typeof str == REPLACE_ME);
+    assert(typeof str == 'string');
   },
 
   'Substrings (get a section of the string)': function () {
     var str = 'Learning test-driven JavaScript';
 
-    assert(REPLACE_ME == 'test-driven');
+    assert(str.substring(9, 20) == 'test-driven');
   },
 
   'String length': function () {
     var str = 'Test-driven development';
 
-    assert(str.length == REPLACE_ME, 'String length');
-    assert(str[str.length] == REPLACE_ME, "What's at the index?");
+    assert(str.length == 23, 'String length');
+    assert(str[str.length] == undefined, "What's at the index?");
   },
 });
 
@@ -51,16 +51,16 @@ testCase('Booleans', {
   'typeof result': function () {
     var bool = true;
 
-    assert(!bool == REPLACE_ME, '==');
-    assert(typeof bool == REPLACE_ME, 'typeof');
+    assert(!bool == false, '==');
+    assert(typeof bool == 'boolean', 'typeof');
   },
 
   'Converting to booleans': function () {
     var str1 = 'A string';
     var str2 = '';
 
-    assert(Boolean(str1) == REPLACE_ME, 'str1');
-    assert(Boolean(str2) == REPLACE_ME, 'str2');
+    assert(Boolean(str1) == true, 'str1');
+    assert(Boolean(str2) == false, 'str2');
   },
 });
 
@@ -69,33 +69,33 @@ testCase('Numbers', {
   'typeof result': function () {
     var num = 42;
 
-    assert(typeof num == REPLACE_ME);
+    assert(typeof num == 'number');
   },
 
   'Invalid division': function () {
     var num = 1 / 0;
-    assert(num == REPLACE_ME, '1 / 0');
+    assert(num == Infinity, '1 / 0');
 
     num = 1 / '';
-    assert(num == REPLACE_ME, '1 / ""'); // Bonus: Why?
+    assert(num == Infinity, '1 / ""'); // Bonus: Why?
 
     num = 1 / {};
-    assert(num == REPLACE_ME, '1 / {} (ask if stuck!)');
-    assert(typeof num == REPLACE_ME, 'typeof result');
+    assert(isNaN(num), '1 / {} (ask if stuck!)');
+    assert(typeof num == 'number', 'typeof result');
   },
 
   'Number conversion': function () {
     var str = '10';
-    assert(Number(str) == REPLACE_ME, 'Number(10)');
+    assert(Number(str) == 10, 'Number(10)');
 
     str = '10.23';
-    assert(Number(str) == REPLACE_ME, 'Number(10.23)');
+    assert(Number(str) == 10.23, 'Number(10.23)');
 
     str = '10.23';
-    assert(parseInt(str) == REPLACE_ME, 'parseInt(10.23)');
+    assert(parseInt(str) == 10, 'parseInt(10.23)');
 
     str = '10.23';
-    assert(parseFloat(str) == REPLACE_ME, 'parseFloat(10.23)');
+    assert(parseFloat(str) == 10.23, 'parseFloat(10.23)');
   },
 });
 
@@ -104,13 +104,13 @@ testCase('Math', {
   'Rounding and PI': function () {
     var num = Math.floor(1337 * Math.PI) / 100;
 
-    assert(num == REPLACE_ME);
+    assert(num == 42);
   },
 
   Remainder: function () {
     var num = 42 % 4;
 
-    assert(num == REPLACE_ME);
+    assert(num == 2);
   },
 
   'Remainder for array index (bonus)': function () {
@@ -121,7 +121,7 @@ testCase('Math', {
     // (Food for thought: What happens if we do go out of bounds?)
     var i = 100;
     while (i--) {
-      assert(typeof arr[i] == 'number');
+      assert(typeof arr[i % arr.length] == 'number');
     }
   },
 });
@@ -130,8 +130,8 @@ testCase('Null', {
   'Equality and typeof': function () {
     var obj = null;
 
-    assert(obj === REPLACE_ME, '===');
-    assert(typeof obj == REPLACE_ME, 'typeof');
+    assert(obj === null, '===');
+    assert(typeof obj == 'object', 'typeof');
   },
 });
 
@@ -139,8 +139,8 @@ testCase('Undefined', {
   'Equality and typeof': function () {
     var obj;
 
-    assert(obj == REPLACE_ME, '==');
-    assert(typeof obj == REPLACE_ME, 'typeof');
+    assert(obj == undefined, '==');
+    assert(typeof obj == 'undefined', 'typeof');
   },
 });
 
