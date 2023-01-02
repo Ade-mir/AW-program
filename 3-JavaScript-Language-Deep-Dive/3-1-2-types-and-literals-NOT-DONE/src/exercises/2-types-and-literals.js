@@ -149,63 +149,63 @@ testCase('Arrays', {
   'Array literals': function () {
     var arr = [1, 2, 3, 4, 5];
 
-    assert(arr.length == REPLACE_ME, 'length');
-    assert(typeof arr == REPLACE_ME, 'typeof');
+    assert(arr.length == 5, 'length');
+    assert(typeof arr == 'object', 'typeof');
   },
 
   'Arrays as strings': function () {
     var arr = ['J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't'];
-    assert(arr.join('') == REPLACE_ME, "join('')");
+    assert(arr.join('') == 'JavaScript', "join('')");
 
     arr = [1, 2, 3];
-    assert(arr.join(', ') == REPLACE_ME, "join(', ')");
+    assert(arr.join(', ') == '1, 2, 3', "join(', ')");
   },
 
   'Array slices': function () {
     var arr = 'JavaScript'.split('');
 
-    assert(REPLACE_ME == 'Script');
+    assert(arr.slice(4).join('') == 'Script');
   },
 
   'Adding items': function () {
     var arr = [1, 2, 3, 4, 5];
     arr[2] = 0;
 
-    assert(arr.join(', ') == REPLACE_ME);
+    assert(arr.join(', ') == '1, 2, 0, 4, 5');
   },
 
   'Deleting items': function () {
     var arr = [1, 2, 3, 4, 5];
     delete arr[2];
 
-    assert(arr.length == REPLACE_ME, 'length');
-    assert(arr.join(', ') == REPLACE_ME, 'join');
+    assert(arr.length == 5, 'length');
+    assert(arr.join(', ') == '1, 2, , 4, 5', 'join');
   },
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
   'Replacing items': function () {
     var arr = [1, 2, 3, 4, 5]; // HINT: Modify array using Array.prototype.splice
-
+    arr.splice(2, 1, 0, 0, 0);
     assert(arr.join(', ') == '1, 2, 0, 0, 0, 4, 5');
   },
 
   'Array constructor': function () {
     var arr = new Array(1, 2, 3, 4, 5);
-    assert(arr.join(', ') == REPLACE_ME, 'First array');
+    assert(arr.join(', ') == '1, 2, 3, 4, 5', 'First array');
 
     arr = Array(1, 2, 3, 4, 5);
-    assert(arr.join(', ') == REPLACE_ME, 'Second array');
+    assert(arr.join(', ') == '1, 2, 3, 4, 5', 'Second array');
 
     arr = Array(1, 5);
-    assert(arr.join(', ') == REPLACE_ME, 'Third array');
+    assert(arr.join(', ') == '1, 5', 'Third array');
 
     arr = Array(5);
-    assert(arr.join(', ') == REPLACE_ME, 'Fourth array');
+    assert(arr.join(', ') == ', , , , ', 'Fourth array');
   },
 
   'Array item access': function () {
     var arr = [1, 2, 3, 4, 5];
 
-    assert(REPLACE_ME == 4);
+    assert(arr[3] == 4);
   },
 });
