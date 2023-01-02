@@ -1,33 +1,23 @@
-// let arr1 = [1, 2, 2, 3];
-// let arr2 = [1, 2, 2, 3];
-
-/*
-function isEqual(list1, list2) {
-  let isFalse = 0; // Starting variable
-  if (list1.length !== list2.length) return false; //Stop statement checking if list1 has the same length as list 2. if not => false.
-
-  for (let i = 0; i < list1.length; i++) {
-    if (list1[i] !== list2[i]) {
-      isFalse++;
-      v;
-    }
-  } // Iterating through the length of list1 checking to see if the index of each list is NOT equal to each other. If true => isFalse variable is incremented.
-
-  if (isFalse !== 0) return false;
-  return true; // As long as isFalse is NOT 0 it will return false.
+function flipCase(str) {
+  let flipped = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) === str.charAt(i).toUpperCase()) {
+      flipped += str.charAt(i).toLowerCase();
+    } else flipped += str.charAt(i).toUpperCase();
+  }
+  return flipped;
 }
 
-console.log(isEqual(arr1, arr2));
-*/
+flipCase('hELLO');
 
 function flipCase(str) {
+  let flipped = '';
   for (let i = 0; i < str.length; i++) {
     if (str[i] === str[i].toUpperCase()) {
-      console.log('uppercase');
-    } else console.log('lowercase');
+      flipped += str[i].toLowerCase();
+    } else flipped += str[i].toUpperCase();
   }
+  return flipped;
 }
 
-flipCase('HeLlO');
-
-// ITS WORKING SO FAR!!
+flipCase('hELLO');
