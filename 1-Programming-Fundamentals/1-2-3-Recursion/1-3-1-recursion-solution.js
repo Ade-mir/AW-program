@@ -39,7 +39,7 @@ function exponent(base, exp) {
 /**
  * 4. (alternative 1)
  */
- function fibonacciSequence(m) {
+function fibonacciSequence(m) {
   if (m < 1) {
     return [];
   } else if (m == 1) {
@@ -48,7 +48,8 @@ function exponent(base, exp) {
     return [0, 1];
   } else {
     let sequence = fibonacciSequence(m - 1);
-    let nextFibonacciNumber = sequence[sequence.length - 1] + sequence[sequence.length - 2];
+    let nextFibonacciNumber =
+      sequence[sequence.length - 1] + sequence[sequence.length - 2];
     sequence.push(nextFibonacciNumber);
     return sequence;
   }
@@ -66,7 +67,8 @@ function fibonacciSequence(m) {
     return [0, 1];
   } else {
     let sequence = fibonacciSequence(m - 1);
-    let nextFibonacciNumber = sequence[sequence.length - 1] + sequence[sequence.length - 2];
+    let nextFibonacciNumber =
+      sequence[sequence.length - 1] + sequence[sequence.length - 2];
     return sequence.concat(nextFibonacciNumber);
   }
 }
@@ -76,10 +78,11 @@ function fibonacciSequence(m) {
  */
 function fibonacciSequence(m) {
   if (m < 3) {
-    return [0, 1].slice(0, m)
+    return [0, 1].slice(0, m);
   } else {
     let sequence = fibonacciSequence(m - 1);
-    let nextFibonacciNumber = sequence[sequence.length - 1] + sequence[sequence.length - 2];
+    let nextFibonacciNumber =
+      sequence[sequence.length - 1] + sequence[sequence.length - 2];
     return sequence.concat(nextFibonacciNumber);
   }
 }
@@ -89,14 +92,12 @@ function fibonacciSequence(m) {
  */
 function fibonacciSequence(m) {
   if (m < 3) {
-    return [0, 1].slice(0, m)
+    return [0, 1].slice(0, m);
   } else {
     let sequence = fibonacciSequence(m - 1);
-    let nextFibonacciNumber = sequence[sequence.length - 1] + sequence[sequence.length - 2];
-    
-    return [
-      ...sequence,
-      nextFibonacciNumber
-    ];
+    let nextFibonacciNumber =
+      sequence[sequence.length - 1] + sequence[sequence.length - 2];
+
+    return [...sequence, nextFibonacciNumber];
   }
 }
