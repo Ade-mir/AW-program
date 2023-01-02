@@ -1,4 +1,4 @@
-var { testCase, assert, assertEquals } = require("../lib/test-runner");
+var { testCase, assert, assertEquals } = require('../lib/test-runner');
 
 /**
  * DESCRIPTION:
@@ -12,21 +12,21 @@ var { testCase, assert, assertEquals } = require("../lib/test-runner");
  * give it a try before you do this, as in most cases this will give you the
  * answer flat out.
  */
-var REPLACE_ME = "...";
-var TRUE_OR_FALSE = "...";
+var REPLACE_ME = '...';
+var TRUE_OR_FALSE = '...';
 
-testCase("Truthy and falsy values", {
-  "Name all falsy values": function () {
+testCase('Truthy and falsy values', {
+  'Name all falsy values': function () {
     // Use each falsy value only once! :)
-    assert(!REPLACE_ME);
-    assert(!REPLACE_ME);
-    assert(!REPLACE_ME);
-    assert(!REPLACE_ME);
-    assert(!REPLACE_ME);
-    assert(!REPLACE_ME);
+    assert(!false);
+    assert(!NaN);
+    assert(!undefined);
+    assert(!0);
+    assert(!'');
+    assert(!null);
   },
 
-  "Which branch is executed?": function () {
+  'Which branch is executed?': function () {
     var value, result;
 
     if (value) {
@@ -35,16 +35,16 @@ testCase("Truthy and falsy values", {
       result = false;
     }
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == false);
   },
 
-  "Truth value of string zero": function () {
-    var value = "0";
+  'Truth value of string zero': function () {
+    var value = '0';
 
-    assert(value == TRUE_OR_FALSE);
+    assert(value == false);
   },
 
-  "Falsy loop termination": function () {
+  'Falsy loop termination': function () {
     var result1 = [],
       result2 = [];
     var i = 5;
@@ -59,179 +59,179 @@ testCase("Truthy and falsy values", {
       result2.push(i);
     }
 
-    assert(result1.join(", ") == REPLACE_ME, "result1");
-    assert(result2.join(", ") == REPLACE_ME, "result2");
+    assert(result1.join(', ') == ['4, 3, 2, 1'], 'result1');
+    assert(result2.join(', ') == ['4, 3, 2, 1, 0'], 'result2');
   },
 
-  "Using logical and on strings": function () {
-    var name = "Eirik";
-    var job = "Programmer";
+  'Using logical and on strings': function () {
+    var name = 'Eirik';
+    var job = 'Programmer';
 
-    assert((name && job) == REPLACE_ME);
+    assert((name && job) == 'Programmer');
   },
 
-  "Unary not operator and strings": function () {
-    var name = "Eirik";
+  'Unary not operator and strings': function () {
+    var name = 'Eirik';
 
-    assert(!name == REPLACE_ME);
+    assert(!name == '');
   },
 });
 
-testCase("Equality", {
-  "Comparing undefined": function () {
+testCase('Equality', {
+  'Comparing undefined': function () {
     var result = undefined == undefined;
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Comparing null": function () {
+  'Comparing null': function () {
     var result = null == null;
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Comparing null with undefined": function () {
+  'Comparing null with undefined': function () {
     var result1 = null == undefined;
     var result2 = undefined == null;
 
-    assert(result1 == TRUE_OR_FALSE, "result1");
-    assert(result2 == TRUE_OR_FALSE, "result2");
+    assert(result1 == TRUE_OR_FALSE, 'result1');
+    assert(result2 == TRUE_OR_FALSE, 'result2');
   },
 
-  "Comparing NaN": function () {
+  'Comparing NaN': function () {
     var result = NaN == NaN;
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Comparing arrays": function () {
+  'Comparing arrays': function () {
     var arr1 = [1, 2, 3, 4, 5];
     var arr2 = [1, 2, 3, 4, 5];
     var compareToSelf = arr1 == arr1;
     var compareToOther = arr1 == arr2;
 
-    assert(compareToSelf == TRUE_OR_FALSE, "compare to self");
-    assert(compareToOther == TRUE_OR_FALSE, "compare to other");
+    assert(compareToSelf == TRUE_OR_FALSE, 'compare to self');
+    assert(compareToOther == TRUE_OR_FALSE, 'compare to other');
   },
 });
 
-testCase("Coercion", {
-  "Comparing strings and numbers": function () {
-    var string = "3";
+testCase('Coercion', {
+  'Comparing strings and numbers': function () {
+    var string = '3';
     var number = 3;
     var result = string == number;
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Comparing booleans to strings": function () {
+  'Comparing booleans to strings': function () {
     var bool = true;
-    var string = "1";
+    var string = '1';
     var result = bool == string;
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Boolean arithmetic": function () {
+  'Boolean arithmetic': function () {
     var result = (true + true) * (true + true) + false;
 
     assert(result == REPLACE_ME);
   },
 });
 
-testCase("Addition or concatenation?", {
-  "Adding string and number": function () {
-    var str = "42";
+testCase('Addition or concatenation?', {
+  'Adding string and number': function () {
+    var str = '42';
     var num = 42;
 
     assert(str + num == REPLACE_ME);
   },
 
-  "Adding string and boolean": function () {
-    var str = "42";
+  'Adding string and boolean': function () {
+    var str = '42';
     var bool = true;
 
     assert(str + bool == REPLACE_ME);
   },
 
-  "Adding number and boolean": function () {
+  'Adding number and boolean': function () {
     var number = 42;
     var bool = true;
 
     assert(number + bool == REPLACE_ME);
   },
 
-  "Applying unary plus before addition/concatenation": function () {
-    var string = "42";
+  'Applying unary plus before addition/concatenation': function () {
+    var string = '42';
     var number = 42;
 
     assert(+string + number == REPLACE_ME);
   },
 });
 
-testCase("Strict equality", {
-  "Comparing numbers": function () {
+testCase('Strict equality', {
+  'Comparing numbers': function () {
     var result = 42 === 42;
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Comparing strings": function () {
-    var result = "Eirik" === "Eirik";
+  'Comparing strings': function () {
+    var result = 'Eirik' === 'Eirik';
 
     assert(result == TRUE_OR_FALSE);
   },
 
-  "Comparing objects": function () {
-    var object = { course: "JavaScript for Developers" };
-    var result = object === { course: "JavaScript for Developers" };
+  'Comparing objects': function () {
+    var object = { course: 'JavaScript for Developers' };
+    var result = object === { course: 'JavaScript for Developers' };
 
-    assert(result == TRUE_OR_FALSE, "result");
+    assert(result == TRUE_OR_FALSE, 'result');
   },
 });
 
-testCase("Short-circuiting expressions", {
-  "&&": function () {
-    var lang = { name: "JavaScript" };
+testCase('Short-circuiting expressions', {
+  '&&': function () {
+    var lang = { name: 'JavaScript' };
     var version = lang && lang.name && lang.version;
 
     assert(version == REPLACE_ME);
   },
 
-  "||": function () {
-    var lang = { name: "JavaScript", version: "1.8" };
-    var version = (lang && lang.version) || "1.5";
+  '||': function () {
+    var lang = { name: 'JavaScript', version: '1.8' };
+    var version = (lang && lang.version) || '1.5';
 
     assert(version == REPLACE_ME);
   },
 
-  "Greedy ||": function () {
+  'Greedy ||': function () {
     function addToInventory(hero, item) {
       if (!hero || !hero.items) {
         return;
       }
 
-      hero.items += " " + item;
+      hero.items += ' ' + item;
     }
 
-    var frodo = { items: "" };
-    addToInventory(frodo, "ring");
+    var frodo = { items: '' };
+    addToInventory(frodo, 'ring');
 
     assertEquals(frodo.items, REPLACE_ME);
   },
 
-  "Working addToInventory (bonus)": function () {
+  'Working addToInventory (bonus)': function () {
     function addToInventory(hero, item) {
       // Implement the function so the assertions pass
       // (You can use the previous exercises as your starting point)
     }
 
-    var frodo = { items: "" };
-    addToInventory(frodo, "ring");
-    assertEquals(frodo.items, " ring");
+    var frodo = { items: '' };
+    addToInventory(frodo, 'ring');
+    assertEquals(frodo.items, ' ring');
 
     var harry = {};
-    addToInventory(harry, "wand");
+    addToInventory(harry, 'wand');
     assertEquals(harry.items, undefined);
   },
 });
