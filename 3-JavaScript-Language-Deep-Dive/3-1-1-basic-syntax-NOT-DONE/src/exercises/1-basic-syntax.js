@@ -40,10 +40,10 @@ testCase('Variables', {
 
       // If you're stuck and need more helpful error messages, try:
       // assertEquals(language, REPLACE_ME);
-      assert(language == REPLACE_ME, 'Inside the if');
+      assert(language == 'C++', 'Inside the if');
     }
 
-    assert(language == REPLACE_ME, 'Outside the if');
+    assert(language == 'C++', 'Outside the if');
   },
 
   'Variables in functions (1)': function () {
@@ -52,12 +52,12 @@ testCase('Variables', {
     function whatLanguage() {
       var language = 'C++';
 
-      assert(language == REPLACE_ME, 'In nested function');
+      assert(language == 'C++', 'In nested function');
     }
 
     whatLanguage();
 
-    assert(language == REPLACE_ME, 'In outer function');
+    assert(language == 'JavaScript', 'In outer function');
   },
 
   'Variables in functions (2)': function () {
@@ -66,12 +66,12 @@ testCase('Variables', {
     function whatLanguage() {
       language = 'C++';
 
-      assert(language == REPLACE_ME, 'In nested function');
+      assert(language == 'C++', 'In nested function');
     }
 
     whatLanguage();
 
-    assert(language == REPLACE_ME, 'In outer function');
+    assert(language == 'C++', 'In outer function');
   },
 
   'Variables in functions (3)': function () {
@@ -80,13 +80,13 @@ testCase('Variables', {
     function whatLanguage() {
       language = 'C++';
 
-      assert(language == REPLACE_ME, 'In nested function');
+      assert(language == 'C++', 'In nested function');
     }
 
     language = 'TypeScript';
     whatLanguage();
 
-    assert(language == REPLACE_ME, 'In outer function');
+    assert(language == 'C++', 'In outer function');
   },
 });
 
@@ -98,7 +98,7 @@ testCase('Conditional statements', {
       var language = 'JavaScript';
     }
 
-    assert(language == REPLACE_ME);
+    assert(language == undefined);
   },
 
   'If (2)': function () {
@@ -108,7 +108,7 @@ testCase('Conditional statements', {
       var language = 'JavaScript';
     }
 
-    assert(language == REPLACE_ME);
+    assert(language == 'JavaScript');
   },
 
   'If (3)': function () {
@@ -120,7 +120,7 @@ testCase('Conditional statements', {
       language = 'TypeScript';
     }
 
-    assert(language == REPLACE_ME);
+    assert(language == '');
   },
 
   'If (4)': function () {
@@ -132,7 +132,7 @@ testCase('Conditional statements', {
       language = 'TypeScript';
     }
 
-    assert(language == REPLACE_ME);
+    assert(language == 'TypeScript');
   },
 
   'If (5)': function () {
@@ -142,7 +142,7 @@ testCase('Conditional statements', {
     if (changeLanguage) language = 'JavaScript';
     language = 'TypeScript';
 
-    assert(language == REPLACE_ME);
+    assert(language == 'TypeScript');
   },
 
   'If (6)': function () {
@@ -152,7 +152,7 @@ testCase('Conditional statements', {
     if (changeLanguage) language = 'JavaScript';
     language = 'TypeScript';
 
-    assert(language == REPLACE_ME);
+    assert(language == 'TypeScript');
   },
 
   'Switch / case (1)': function () {
@@ -173,7 +173,7 @@ testCase('Conditional statements', {
         result = 1;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 200);
   },
 
   'Switch / case (2)': function () {
@@ -191,7 +191,7 @@ testCase('Conditional statements', {
         result = 1;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 1);
   },
 
   'Switch / case (3)': function () {
@@ -209,7 +209,7 @@ testCase('Conditional statements', {
         result = 900;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 900);
   },
 
   'Switch / case (4)': function () {
@@ -229,7 +229,7 @@ testCase('Conditional statements', {
         result = 1;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 1);
   },
 
   'Switch / case (5)': function () {
@@ -250,7 +250,7 @@ testCase('Conditional statements', {
         result = 1;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 200);
   },
 
   'Switch / case (6)': function () {
@@ -271,7 +271,7 @@ testCase('Conditional statements', {
         result = 1;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 100);
   },
 
   'Switch / case (7)': function () {
@@ -290,7 +290,7 @@ testCase('Conditional statements', {
         result = 1;
     }
 
-    assert(result == REPLACE_ME);
+    assert(result == 300);
   },
 });
 
@@ -303,19 +303,21 @@ testCase('while loops', {
       ??
     }
     */
+    let n = 0;
+    while (n < 10) {
+      n++;
+    }
 
     assertEquals(n, 10);
   },
 
   'Rewrite to use while loop': function () {
     // Rewrite the following statements to a while loop
-    var n = 0;
+    let n = 0;
 
-    n++;
-    n++;
-    n++;
-    n++;
-    n++;
+    while (n < 5) {
+      n++;
+    }
 
     assertEquals(n, 5);
   },
@@ -330,6 +332,10 @@ testCase('for loops', {
       ??
     }
     */
+
+    for (let i = 0; i < 10; i++) {
+      n++;
+    }
 
     assertEquals(n, 10);
   },
@@ -357,15 +363,17 @@ testCase('for loops', {
 
 testCase('Exceptions', {
   'Make this test pass (catch the error!)': function () {
-    throw new Error('Oops!');
+    try {
+      throw new Error('Oops!');
+    } catch (e) {}
   },
 
   'Exception message': function () {
     try {
       throw new Error('Oops!');
     } catch (e) {
-      assertEquals(REPLACE_ME, 'Oops!');
-      assertEquals(e.name, REPLACE_ME);
+      assertEquals(e.message, 'Oops!');
+      assertEquals(e.name, 'Error');
     }
   },
 
@@ -375,14 +383,13 @@ testCase('Exceptions', {
     try {
       throw 'Oops';
     } catch (e) {
-      assert(e == REPLACE_ME, 'In catch');
+      assert(e == 'Oops', 'In catch');
     }
 
-    assert(e == REPLACE_ME, 'Outside catch');
+    assert(e == 42, 'Outside catch');
   },
 
   'Nested catching': function () {
-    var e = 42;
     var lastError = undefined;
 
     try {
@@ -396,6 +403,6 @@ testCase('Exceptions', {
       }
     }
 
-    assert(lastError.message == REPLACE_ME);
+    assert(lastError.message == 'Yikes!');
   },
 });
