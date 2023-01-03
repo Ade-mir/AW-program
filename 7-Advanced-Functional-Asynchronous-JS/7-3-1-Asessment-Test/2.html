@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Pokédex</h1>
+    <div id="pokemon"></div>
+    <img src="" alt="" />
+  </body>
+  <script>
+    let pokeNode = document.getElementById('pokemon');
+
+    fetch('https://pokeapi.co/api/v2/pokemon/50')
+      .then((response) => response.json())
+      .then((data) => {
+        let name = data.name;
+        let picture = data.sprites.front_default;
+        console.log(name);
+        pokeNode.innerHTML = name;
+      });
+
+    // img.setAttribute('src', im);
+  </script>
+</html>

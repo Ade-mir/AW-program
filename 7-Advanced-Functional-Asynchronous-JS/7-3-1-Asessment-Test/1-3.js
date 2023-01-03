@@ -22,25 +22,51 @@ function encrypt(input, callback) {
   }, 100);
 }
 
-async function main() {
+compThenEncr();
+compThenEncrWithProm();
+
+// Using callbacks
+
+function compThenEncr() {
+  let input = 'the secret key is 123543';
+
+  compress(input, function (err, result) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    encrypt(result, function (err, result) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log(result);
+    });
+  });
+}
+
+// Using promises
+
+async function compThenEncrWithProm() {
   try {
-    const input = 'the secret key is 123543';
-    const compressed = await new Promise((resolve, reject) => {
-      compress(input, (err, result) => {
+    let input = 'the secret key is 123543';
+
+    let comp = await new Promise(function (resolve, reject) {
+      compress(input, function (err, result) {
         if (err) reject(err);
         else resolve(result);
       });
     });
-    const encrypted = await new Promise((resolve, reject) => {
-      encrypt(compressed, (err, result) => {
+
+    let encr = await new Promise(function (resolve, reject) {
+      encrypt(comp, function (err, result) {
         if (err) reject(err);
         else resolve(result);
       });
     });
-    console.log(encrypted);
+
+    console.log(encr);
   } catch (err) {
     console.error(err);
   }
 }
-
-main();
