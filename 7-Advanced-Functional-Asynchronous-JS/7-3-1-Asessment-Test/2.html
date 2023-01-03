@@ -5,24 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      div {
+        height: calc(100vh / 4);
+        width: calc(100vw / 4);
+      }
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
   </head>
   <body>
     <h1>Pokédex</h1>
-    <div id="pokemon"></div>
-    <img src="" alt="" />
+    <div id="pokemons"></div>
   </body>
   <script>
-    let pokeNode = document.getElementById('pokemon');
+    let numberOfPokemons = 351;
+    let arrayOfPokemons = [];
 
-    fetch('https://pokeapi.co/api/v2/pokemon/50')
-      .then((response) => response.json())
-      .then((data) => {
-        let name = data.name;
-        let picture = data.sprites.front_default;
-        console.log(name);
-        pokeNode.innerHTML = name;
-      });
+    function fetchPokemons(numberOfPokemons) {
+      for (i = 1; i <= numberOfPokemons; i++) {
+        arrayOfPokemons.push(i);
+      }
+    }
 
-    // img.setAttribute('src', im);
+    fetchPokemons(numberOfPokemons);
+
+    let pokemonsNode = document.getElementById('pokemons');
+    let imgNode = document.getElementById('img');
+
+    arrayOfPokemons.forEach((element, index) => {
+      fetch('https://pokeapi.co/api/v2/pokemon/' + `${index}`)
+        .then((response) => response.json())
+        .then((data) => {
+          let name = data.name;
+          let picture = data.sprites.front_default;
+
+          pokemonsNode.insertAdjacentHTML(
+            'beforebegin',
+            '<div>' +
+              '<h1>' +
+              `${name}` +
+              '</h1>' +
+              '<img src="' +
+              `${picture}` +
+              '"/>' +
+              '</div>'
+          );
+        });
+    });
   </script>
 </html>
