@@ -81,27 +81,27 @@ testCase('Equality', {
   'Comparing undefined': function () {
     var result = undefined == undefined;
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == true);
   },
 
   'Comparing null': function () {
     var result = null == null;
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == true);
   },
 
   'Comparing null with undefined': function () {
     var result1 = null == undefined;
     var result2 = undefined == null;
 
-    assert(result1 == TRUE_OR_FALSE, 'result1');
-    assert(result2 == TRUE_OR_FALSE, 'result2');
+    assert(result1 == true, 'result1');
+    assert(result2 == true, 'result2');
   },
 
   'Comparing NaN': function () {
     var result = NaN == NaN;
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == false);
   },
 
   'Comparing arrays': function () {
@@ -110,8 +110,8 @@ testCase('Equality', {
     var compareToSelf = arr1 == arr1;
     var compareToOther = arr1 == arr2;
 
-    assert(compareToSelf == TRUE_OR_FALSE, 'compare to self');
-    assert(compareToOther == TRUE_OR_FALSE, 'compare to other');
+    assert(compareToSelf == true, 'compare to self');
+    assert(compareToOther == false, 'compare to other');
   },
 });
 
@@ -121,7 +121,7 @@ testCase('Coercion', {
     var number = 3;
     var result = string == number;
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == true);
   },
 
   'Comparing booleans to strings': function () {
@@ -129,13 +129,13 @@ testCase('Coercion', {
     var string = '1';
     var result = bool == string;
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == true);
   },
 
   'Boolean arithmetic': function () {
     var result = (true + true) * (true + true) + false;
 
-    assert(result == REPLACE_ME);
+    assert(result == 4);
   },
 });
 
@@ -144,28 +144,28 @@ testCase('Addition or concatenation?', {
     var str = '42';
     var num = 42;
 
-    assert(str + num == REPLACE_ME);
+    assert(str + num == 4242);
   },
 
   'Adding string and boolean': function () {
     var str = '42';
     var bool = true;
 
-    assert(str + bool == REPLACE_ME);
+    assert(str + bool == '42true');
   },
 
   'Adding number and boolean': function () {
     var number = 42;
     var bool = true;
 
-    assert(number + bool == REPLACE_ME);
+    assert(number + bool == 43);
   },
 
   'Applying unary plus before addition/concatenation': function () {
     var string = '42';
     var number = 42;
 
-    assert(+string + number == REPLACE_ME);
+    assert(+string + number == 84);
   },
 });
 
@@ -173,20 +173,20 @@ testCase('Strict equality', {
   'Comparing numbers': function () {
     var result = 42 === 42;
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == true);
   },
 
   'Comparing strings': function () {
     var result = 'Eirik' === 'Eirik';
 
-    assert(result == TRUE_OR_FALSE);
+    assert(result == true);
   },
 
   'Comparing objects': function () {
     var object = { course: 'JavaScript for Developers' };
     var result = object === { course: 'JavaScript for Developers' };
 
-    assert(result == TRUE_OR_FALSE, 'result');
+    assert(result == false, 'result');
   },
 });
 
@@ -195,14 +195,14 @@ testCase('Short-circuiting expressions', {
     var lang = { name: 'JavaScript' };
     var version = lang && lang.name && lang.version;
 
-    assert(version == REPLACE_ME);
+    assert(version == undefined);
   },
 
   '||': function () {
     var lang = { name: 'JavaScript', version: '1.8' };
     var version = (lang && lang.version) || '1.5';
 
-    assert(version == REPLACE_ME);
+    assert(version == '1.8');
   },
 
   'Greedy ||': function () {
@@ -217,13 +217,16 @@ testCase('Short-circuiting expressions', {
     var frodo = { items: '' };
     addToInventory(frodo, 'ring');
 
-    assertEquals(frodo.items, REPLACE_ME);
+    assertEquals(frodo.items, '');
   },
 
   'Working addToInventory (bonus)': function () {
     function addToInventory(hero, item) {
-      // Implement the function so the assertions pass
-      // (You can use the previous exercises as your starting point)
+      if (!hero || typeof hero.items != 'string') {
+        return;
+      }
+
+      hero.items += ' ' + item;
     }
 
     var frodo = { items: '' };
