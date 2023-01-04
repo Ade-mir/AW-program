@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(28, 143, 134);
+  color: white;
+}
+body h1 {
+  text-align: center;
+}
+body div h1 {
+  text-align: left;
+}
+body #welcomeMessage {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.stock h1 {
+  font-size: 1.5rem;
+}
+.stock p {
+  font-weight: lighter;
+}
