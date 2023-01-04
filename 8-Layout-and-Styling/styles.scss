@@ -1,0 +1,21 @@
+@use 'darkmode';
+@use 'lightmode';
+
+$default-fontsize: 14px;
+$bold-text: bold;
+
+body {
+  background-color: lightmode.$background-color;
+  color: lightmode.$color;
+  font-size: $default-fontsize;
+}
+
+h1 {
+  font-size: $default-fontsize;
+  font-weight: $bold-text;
+}
+
+.darkmode {
+  background-color: darkmode.$background-color;
+  color: darkmode.$color;
+}

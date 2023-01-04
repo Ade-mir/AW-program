@@ -1,0 +1,65 @@
+.foo {
+  color: red;
+}
+.foo :hover {
+  color: blue;
+}
+
+a .red-text {
+  color: red;
+}
+a .blue-text {
+  color: blue;
+}
+
+p {
+  color: #c2c2c2;
+}
+
+h1 {
+  color: #c2c2c2;
+  font-size: 64px;
+  margin-bottom: 48px;
+}
+h1 .title {
+  color: grey;
+}
+h1 .aside {
+  color: black;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+h2 .title {
+  color: grey;
+}
+h2 .aside {
+  color: black;
+}
+
+.content-box {
+  color: #333;
+  background-color: #fff;
+}
+.content-box .inverse {
+  color: #fff;
+  background-color: #333;
+}
+
+.container {
+  color: grey;
+}
+.container a {
+  color: purple;
+}
+.container a :hover {
+  color: red;
+}
+.container .box {
+  width: 100px;
+}
+.container .box .wide-box {
+  width: 200px;
+}/*# sourceMappingURL=task1.css.map */

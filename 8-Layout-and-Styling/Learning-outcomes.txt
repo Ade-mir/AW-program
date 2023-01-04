@@ -1,0 +1,67 @@
+Learning Outcomes M#8
+AW Academy Layout and Styling (CSS, JavaScript) (NO) 
+
+ 
+
+Business Area: IT 
+
+Subject: JavaScript 
+
+Estimated time: 3 days/24 hours
+
+Requirements: AW Academy Web Development Fundamentals (HTML, CSS) (NO)
+
+ 
+
+Module Purpose:
+
+This model covers more advanced styling of web pages and web applications involving CSS and Javascript. The module covers CSS frameworks and abstractions, such as SASS and Bootstrap. The goal of the module is to give a good foundation to build web pages at a professional level. 
+
+ 
+
+Learning Outcomes  
+
+Upon successful completion of the module, participants should be able to demonstrate; 
+
+ 
+
+Knowledge  
+
+Know about component-based styling and layout with usage of JavaScript and CSS
+Know about preprocessors like SASS and LESS, and their pros/cons
+Know about layout with floats, flexbox and CSS Grid
+Informed about design methodologies like BEM and OOCSS
+Know about design frameworks and systems like Bootstrap and Material Design
+Know about responsive design
+ 
+
+Skills
+
+Build component-based design for an application that makes reusing possible
+Make flexible layout to an application with help from Flexbox
+Use preprocessors like SASS to write layout and styling for an application
+Use a framework like Bootstrap or material design as basis for an application
+Build responsive design for an application to be available on different devices
+ 
+
+General competence
+
+Independently develop modern web applications with content and looks upon request
+Know where to find relevant documentation, and how to read that documentation 
+ 
+
+Suggested software/tools 
+
+Visual Studio Code
+SASS
+Chrome
+
+
+
+Module evaluation type 
+
+1 group-based project, with project presentation and presentation hand-in
+ 
+Notes 
+
+<none>

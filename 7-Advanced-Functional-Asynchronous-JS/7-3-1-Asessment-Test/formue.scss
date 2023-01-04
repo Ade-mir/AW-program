@@ -3,24 +3,30 @@ body {
   padding: 0;
   background-color: rgb(28, 143, 134);
   color: white;
-}
-body h1 {
-  text-align: center;
-}
-body div h1 {
-  text-align: left;
-}
-body #welcomeMessage {
-  margin-top: 5rem;
-  font-size: 1.5rem;
+  h1 {
+    text-align: center;
+  }
+  div {
+    h1 {
+      text-align: left;
+    }
+  }
+  #welcomeMessage {
+    margin-top: 5rem;
+    font-size: 1.5rem;
+  }
 }
 
-.stock h1 {
-  font-size: 1.5rem;
+.stock {
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-weight: lighter;
+  }
 }
-.stock p {
-  font-weight: lighter;
-}
+
+// Hamburger menu
 
 * {
   margin: 0;
@@ -53,7 +59,7 @@ nav {
 
 .menu-btn__burger:before,
 .menu-btn__burger:after {
-  content: "";
+  content: '';
   width: 30px;
   height: 3px;
   background: #fff;
@@ -100,4 +106,6 @@ nav {
 
 .menu__item a:hover {
   color: #333;
-}/*# sourceMappingURL=formue.css.map */
+}
+
+// End hamburger menu

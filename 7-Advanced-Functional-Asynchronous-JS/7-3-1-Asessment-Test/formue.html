@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="formue.css" />
   </head>
   <body>
+    <nav>
+      <div class="menu-btn" onclick="toggleMenu()">
+        <div class="menu-btn__burger"></div>
+      </div>
+      <ul class="menu" id="menu">
+        <li class="menu__item"><a href="#">Home</a></li>
+        <li class="menu__item"><a href="#">About</a></li>
+        <li class="menu__item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <h1 id="welcomeMessage">Din Portefølje</h1>
+    <canvas id="myPieChart"></canvas>
     <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="formue.js"></script>
   </body>
 </html>

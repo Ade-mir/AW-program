@@ -1,0 +1,15 @@
+body {
+  background-color: white;
+  color: black;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.darkmode {
+  background-color: black;
+  color: white;
+}/*# sourceMappingURL=styles.css.map */

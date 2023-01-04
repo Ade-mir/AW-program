@@ -1,0 +1,67 @@
+.foo {
+  color: red;
+  :hover {
+    color: blue;
+  }
+}
+
+a {
+  .red-text {
+    color: red;
+  }
+  .blue-text {
+    color: blue;
+  }
+}
+
+p {
+  color: #c2c2c2;
+}
+
+h1 {
+  color: #c2c2c2;
+  font-size: 64px;
+  margin-bottom: 48px;
+  .title {
+    color: grey;
+  }
+  .aside {
+    color: black;
+  }
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 32px;
+  .title {
+    color: grey;
+  }
+  .aside {
+    color: black;
+  }
+}
+
+.content-box {
+  color: #333;
+  background-color: #fff;
+  .inverse {
+    color: #fff;
+    background-color: #333;
+  }
+}
+
+.container {
+  a {
+    color: purple;
+    :hover {
+      color: red;
+    }
+  }
+  color: grey;
+  .box {
+    width: 100px;
+    .wide-box {
+      width: 200px;
+    }
+  }
+}
