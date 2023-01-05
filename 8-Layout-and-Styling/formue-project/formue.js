@@ -1,15 +1,16 @@
 // Welcome message
 
 let firstName = 'Thorvald';
+let lastName = 'Hansen';
 
-let welcomeMessageNode = document.getElementById('welcomeMessage');
+const welcomeMessageNode = document.getElementById('welcomeMessage');
 
 function updateName() {
   welcomeMessageNode.innerHTML = 'Velkommen til din portefølje ' + firstName;
 }
 updateName();
 
-// End welcome message
+// Random color generator for pie chart
 
 let randomColor = function randomColorGen() {
   return (
@@ -21,22 +22,28 @@ let randomColor = function randomColorGen() {
   );
 };
 
+// Portfolio
+// { 'Fund name': [Price per share, Shares owned, CO2 in tonns] }
+
 let portfolio = {
-  'ABC inc': [10, 5, 156],
-  'Zone Corporation': [7, 10, 9],
-  'Finance xyz': [4, 89, 2025],
-  'Restaurant bonds': [10, 90, 36],
-  'Formue.no': [10, 90, 36],
-  Oljefondet: [10, 90, 36],
+  'Handelsbanken Bærekraftig Energi': [19, 503400, 156],
+  'First Norden Fokus': [115, 1078000, 9],
+  'JPM US Growth A (USD)': [27, 898999, 2025],
+  'JPM China A (USD)': [48, 900890, 36],
+  'Odin Sverige D': [64, 35700, 36],
+  'DNB Nordic Small Cap Retail': [10, 82340, 36],
 };
 
 let portfolioSize = Object.values(portfolio).length;
 let portfolioSumNOK = 0;
 let portfolioSumCarbon = 0;
-let portfolioCash = 10000;
-let welcomeMessage = '';
 
-let containerNode = document.getElementById('container');
+const containerNode = document.getElementById('container');
+
+// Adding portfolio data To HTML
+
+addPortfolioSum();
+addPortfolio();
 
 function addPortfolio() {
   for (let i = 0; i < portfolioSize; i++) {
@@ -62,6 +69,8 @@ function addPortfolio() {
   }
 }
 
+// Adding total value of portfolio in NOK
+
 function addPortfolioSum() {
   for (let i = 0; i < portfolioSize; i++) {
     portfolioSumNOK +=
@@ -70,20 +79,27 @@ function addPortfolioSum() {
   containerNode.insertAdjacentHTML(
     'beforebegin',
     '<div>' +
-      '<h2>Porteføljen verdi: ' +
+      '<h6>Porteføljen din har en samlet verdi av: ' +
       `${portfolioSumNOK}` +
-      ' NOK</h2></div>'
-  );
-  containerNode.insertAdjacentHTML(
-    'beforebegin',
-    '<div>' + '<h2>Portfolio Sum: ' + `${portfolioCash}` + ' NOK</h2></div>'
+      ' NOK</h6></div>'
   );
 }
 
-addPortfolioSum();
-addPortfolio();
+// function addPortfolioSum() {
+//   for (let i = 0; i < portfolioSize; i++) {
+//     portfolioSumNOK +=
+//       Object.values(portfolio)[i][0] * Object.values(portfolio)[i][1];
+//   }
+//   containerNode.insertAdjacentHTML(
+//     'beforebegin',
+//     '<div>' +
+//       '<h6>Porteføljen din har en samlet verdi av: ' +
+//       `${portfolioSumNOK}` +
+//       ' NOK</h6></div>'
+//   );
+// }
 
-// Pie Chart
+// Adding pie chart from API: https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js
 
 let ctx = document.getElementById('myPieChart').getContext('2d');
 let myPieChart = new Chart(ctx, {
@@ -100,11 +116,15 @@ let myPieChart = new Chart(ctx, {
   options: {
     legend: {
       labels: {
-        fontColor: 'white',
+        fontColor: 'black',
       },
     },
   },
 });
+
+// Adding portfolio data to piechart and updating to display in HTML
+
+addPortfolioToPie();
 
 function addPortfolioToPie() {
   for (let i = 0; i < portfolioSize; i++) {
@@ -117,28 +137,4 @@ function addPortfolioToPie() {
     Object.values(myPieChart)[3].data.labels.push(Object.keys(portfolio)[i]);
   }
   myPieChart.update();
-}
-
-addPortfolioToPie();
-
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.menu');
-
-let menuOpen = false;
-
-menuBtn.addEventListener('click', toggleMenu);
-
-function toggleMenu() {
-  if (!menuOpen) {
-    menuBtn.classList.add('open');
-    menu.classList.add('open');
-    menuOpen = true;
-    console.log('test');
-  } else {
-    // ITS HERE THE BUG
-    menuBtn.classList.remove('open');
-    menu.classList.remove('open');
-    menuOpen = false;
-    console.log('test');
-  }
 }
