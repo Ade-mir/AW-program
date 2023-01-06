@@ -1,0 +1,30 @@
+body .card-container {
+  border: 2px solid black;
+  padding: 20px;
+  max-width: 300px;
+}
+body .card-title {
+  margin-top: 0;
+}
+body .card-text {
+  font-weight: 500;
+}
+body .button-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+body .button-container .primary {
+  background-color: rgb(90, 124, 90);
+  margin-right: 2px;
+}
+body .button-container .secondary {
+  background-color: rgb(43, 43, 43);
+}
+body .button-container .primary,
+body .button-container .secondary {
+  border: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 15px 10px;
+  color: #ffffff;
+}/*# sourceMappingURL=a.css.map */

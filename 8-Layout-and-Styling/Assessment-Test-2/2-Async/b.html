@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Example 1 - Alternative 1 - Using a seperate print function that calls and prints the getBatteryLevelSync function.
+
+      printBatteryLevel();
+
+      function printBatteryLevel() {
+        console.log(getBatteryLevelSync());
+      }
+
+      function getBatteryLevelSync(cb) {
+        return Math.floor(Math.random() * 101);
+      }
+
+      // Alternative - Storing the getBatteryLevelSync result in a variable, and printing.
+
+      let batteryLevel = getBatteryLevelSync();
+      console.log(batteryLevel);
+
+      // Example 2
+
+      getBatteryLevel(function (currentBatteryLevel) {
+        console.log(currentBatteryLevel);
+      });
+
+      function getBatteryLevel(callback) {
+        setTimeout(() => {
+          callback(Math.floor(Math.random() * 101));
+        }, 1000);
+      }
+
+      // Example 3
+
+      getBatteryLevelAsync().then(function (currentBatteryLevel) {
+        console.log(currentBatteryLevel);
+      });
+
+      function getBatteryLevelAsync() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(Math.floor(Math.random() * 101));
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
+</html>

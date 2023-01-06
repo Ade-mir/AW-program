@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Example</title>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+  <script>
+    // Getting existing elements
+
+    let titleNode = document.querySelector('title');
+    let mainNode = document.getElementById('main');
+
+    // Creating new elements
+
+    let h1Node = document.createElement('h1');
+    let ulNode = document.createElement('ul');
+    let formNode = document.createElement('form');
+    let inputNode = document.createElement('input');
+    let submitNode = document.createElement('input');
+
+    // Appending elements
+
+    mainNode.append(h1Node, ulNode, formNode);
+
+    // Altering elements
+
+    titleNode.innerHTML = 'My Favorite Cars';
+    h1Node.innerHTML = 'Long range electric cars';
+    ulNode.innerHTML =
+      '<li class="car">Tesla Model 3</li><li class="car">Ford Mustang Mach-E</li><li class="car">Tesla Model S</li>';
+    inputNode.setAttribute('type', 'text');
+    inputNode.setAttribute('id', 'textInput');
+    submitNode.setAttribute('type', 'submit');
+    submitNode.setAttribute('id', 'submitButton');
+    submitNode.setAttribute('onclick', 'updateCarInput(event)');
+    formNode.append(inputNode, submitNode);
+
+    // Adding new cars
+
+    function updateCarInput(event) {
+      event.preventDefault(); // to stop page from flickering the result and loading new page.
+      let carInput = inputNode.value;
+      // console.log(carInput); Testing if it works
+      ulNode.insertAdjacentHTML(
+        'beforeend',
+        '<li class="car">' + carInput + '</li>'
+      );
+      inputNode.value = '';
+    }
+  </script>
+</html>
+
+<!-- https://wesbos.com/javascript/05-events/prevent-default-and-form-events -->

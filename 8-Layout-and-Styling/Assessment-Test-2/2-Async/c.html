@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Create a program that does the following
+
+      // Fetches the information from "https://www.vullum.io/academy/places.json"
+
+      // Prints out the latitude of each location
+
+      let storedData;
+
+      getData();
+
+      function getData() {
+        fetch('https://www.vullum.io/academy/places.json')
+          .then((response) => response.json())
+          .then((data) => {
+            storedData = data;
+            printLatitudes();
+          })
+          .catch((error) => {
+            console.log(Error);
+          });
+      }
+
+      function printLatitudes() {
+        storedData.forEach((element) => {
+          console.log(element.coordinates.latitude);
+        });
+      }
+    </script>
+  </body>
+</html>

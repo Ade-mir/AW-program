@@ -1,0 +1,37 @@
+A) Why do we design on paper?
+
+There are many benefits to designing our prototypes and designs in general on paper.
+
+1) We are less attached to our designs if they are a low quality and we spent less time creating them.
+
+In comparison, we might create a high fidelity figma design which we pour hours of sweat and effort into. Most likely this makes us biased to keep our "baby", although the prototype might not be a good solution to the problem we are trying to solve.
+
+2) The "worse" the prototype looks, the more honestly people will give negative feedback to your design. People have an inherent confirmation bias when it comes to giving feedback, "noone wants to be rude", so when you have a polished and fancy design, people understand you have spent a lot of time and effort on it, and therefor they don't want to upset you by giving negative feedback. Although negative feedback usually is the most useful.
+
+On the other hand, if you're prototype looks "bad", written on a stained piece of paper, people assume you are in the early stages of your idea, and have not spent too much time on it, therefor they are more inclined to give you honest feedback on your idea, and design, because they assume you are not too attached to it.
+
+3) A third important factor to consider is that when we draw on paper and show it to someone, and we dont include all the "bells and whistles" of the final product, people are more inclined to focus on the idea, and not so much on the font and color, which is not as important feedback in the early stages as the viability of our prototype.
+
+4) When we design on paper we can quickly create many widely different prototypes and generate a lot of different ideas, features, and potential directions for our designs. When we design higher-fidelity prototypes they take more time, and they are more bound by the technology we use, so they are harder to change, update, and iterate.
+
+5) Kill your darlings. It is hard to "kill" an idea you have been polishing for 1 year. It is relatively easy to scrap and throw away the paper prototype you spent 5 minutes creating. So here both time and type of prototype play a part. Paper is easier to create and trhow away then lets say a figma or XD prototype.
+
+B) What are some important things to think about when designing / building accessible webpages?
+
+1) In general to follow the WCAG rules which outline that we should create webpages that make it as accessible as possible for the most ammount of poeple, regardless of their potential disability, like visual, audible, or motoric impairment..
+
+This includes rules such as always including alternative text to images for people who are visually impeared.
+
+2) An important part of following the WCAG guidelines is to make sure and check how our design/website behaves using online tools that can check for example if our website has enough contrast between the colors, which is important for both people who dont see colors, but also for people with reduced vision, and for people using varying screen sizes, like very small phones.
+
+A big part of making websites accessible today is to have your website be responsive, AKA; it adapts the layout and design to be usable, semantic, easthetic on all different screen sizes.
+
+3) We should plan our webpages with accessibility in mind, and we should always convey "meaning" in at least 2 ways, and sometimes more, For example at a traffic stop sign, there are 2 ways to convey the meaning that you should stop.
+
+- There is the "color" red that is universally used for stop.
+- There is the universal "placement" of the stop sign at the top, with the changing yellow sign in the middle, and the green go sign at the bottom.
+- Additionally you have ticking "sounds" at pedestrian traffic lights, which convey the message that it is safe to cross.
+
+In the above example a blind person, a colorblind person, a deaf person would all be able to understand and use the traffic light.
+
+This is the same way we want to design our webpages for accessibility. By not relying on only one form of meaning, for example only relying on colors to identify clickable links, but by also using universally used placements, "like in the header for navigation", or bolded or underlined styling, as well as potential different color.
