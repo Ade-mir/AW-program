@@ -486,4 +486,14 @@ ORDER BY
 
 -- OPPGAVE 8: Lag en spørring som henter ut en oversikt over de landene i Asia der det snakkes minst 10 forskjellige språk. Spørringen skal hente ut: Navn på land, antall språk og dette skal sorteres synkende på antall språk.
 
-hEI
+SELECT
+	country.name,
+	COUNT(countryLanguage.language),
+FROM
+	country
+JOIN
+	countryLanguage ON country.code = countryLanguage.countryCode
+WHERE
+	SUM(COUNT(countryLanguage.language)) >= 10
+ORDER BY
+	COUNT(countryLanguage.language);
