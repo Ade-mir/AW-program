@@ -497,3 +497,5 @@ WHERE
 	SUM(COUNT(countryLanguage.language)) >= 10
 ORDER BY
 	COUNT(countryLanguage.language);
+
+-- NY LINJE
