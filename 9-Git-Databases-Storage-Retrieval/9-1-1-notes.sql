@@ -454,3 +454,36 @@ LEFT JOIN
     city ON city.countryCode = country.code
 WHERE 
 	country.population < 1000
+
+-- OPPGAVE 6: Ranger byene i verden som ligger i et land med en eller annen form for monarkisk styresett etter folketall. Den mest folkerike byen først.
+
+SELECT
+	city.name,
+	city.population
+FROM
+	city
+JOIN
+	country ON city.countryCode = country.code
+WHERE
+	country.governmentForm LIKE '%Monarchy%'
+ORDER BY
+	city.population DESC;
+
+-- OPPGAVE 7: Hent ut en liste med byer i verden som har minst 8.000.000 innbyggere, og hvilket kontinent de tilhører. Sorter etter innbyggertall, største først. Altså: byens navn, byens innbyggere og hvilket kontinent de tilhører.
+
+SELECT
+	city.name,
+	city.population,
+	country.continent
+FROM
+	city
+JOIN
+	country ON city.countryCode = country.code
+WHERE
+	city.population >= 8000000
+ORDER BY
+	city.population;
+
+-- OPPGAVE 8: Lag en spørring som henter ut en oversikt over de landene i Asia der det snakkes minst 10 forskjellige språk. Spørringen skal hente ut: Navn på land, antall språk og dette skal sorteres synkende på antall språk.
+
+hEI
