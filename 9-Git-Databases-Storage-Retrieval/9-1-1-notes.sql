@@ -410,7 +410,7 @@ JOIN country ON country.code = city.countryCode
 WHERE city.name LIKE 'O%o'
 ORDER BY Country, City;
 
--- Hent ut alle land og deres (eventuelle) hovedsteder. Sorter resultatet på kontinent, og 
+-- OPPGAVE 3: Hent ut alle land og deres (eventuelle) hovedsteder. Sorter resultatet på kontinent, og 
 -- deretter alfabetisk på landets navn.
 
 SELECT country.continent, country.name AS Country, city.name AS City
@@ -418,19 +418,39 @@ FROM city
 JOIN country ON country.capital = city.id
 ORDER BY Country, City;
 
--- Hent ut en oversikt over alle land som har minst én by, hvor mange byer de har og  gjennomsnittlig innbyggertall i disse byene.
+-- OPPGAVE 4 Hent ut en oversikt over alle land som har minst én by, hvor mange byer de har og  gjennomsnittlig innbyggertall i disse byene.
+
+--SELECT  *
+--FROM city;
 
 SELECT 
     country.name AS country, 
     COUNT(city.id) AS num_cities, 
-    AVG(city.population) AS avg_population
+    ROUND(AVG(city.population),0) AS avg_population
 FROM 
     city
 JOIN 
     country ON city.countryCode = country.code
 GROUP BY 
-    Country
+    country.name
 HAVING 
-    COUNT(city.id) > 0;
+    COUNT(city.id) > 0
+ORDER BY
+	-- Country.name;
+	num_cities DESC;
+	--avg_population DESC;
 
--- neste uke.
+-- OPPGAVE 5: Vi ønsker å få opp alle land i verden, og alle deres byer, der innbyggertallet i landet er under  1000 mennesker.  Vi vil se navnet på landet, befolkningen i landet, hvilket kontinent landet tilhører, navnet på evt. byer der, befolkning i evt. byer der. Vi ønsker resultatet sortert alfabetisk etter landenes navn. (Hint: Mitt svar gir 10 rader ut, er det samme antall rader du får?)
+
+SELECT
+	country.name AS Country,
+	country.population AS Country_Population,
+	country.continent,
+	city.name AS City_Name,
+	city.population AS City_Population
+FROM 
+    country
+LEFT JOIN 
+    city ON city.countryCode = country.code
+WHERE 
+	country.population < 1000
