@@ -433,3 +433,4 @@ GROUP BY
 HAVING 
     COUNT(city.id) > 0;
 
+-- neste uke.
