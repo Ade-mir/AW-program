@@ -1,0 +1,19 @@
+-- OPPGAVE 1
+
+-- OPPGAVE 2
+
+-- OPPGAVE 3
+
+-- OPPGAVE 4
+
+-- OPPGAVE 5
+
+-- OPPGAVE 6
+
+-- OPPGAVE 7
+
+-- OPPGAVE 8
+
+-- OPPGAVE 9
+
+-- OPPGAVE 10
