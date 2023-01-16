@@ -39,4 +39,5 @@ console.log(
     number
   )
 );
+
 // Expected output: "123.456,79 €"
