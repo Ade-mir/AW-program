@@ -21,6 +21,7 @@ function returnRandomJoke() {
 }
 
 app.get('/', function (req, res) {
+  res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({ result: returnRandomJoke() }));
 });
 
