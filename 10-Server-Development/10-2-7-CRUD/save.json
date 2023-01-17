@@ -1,0 +1,44 @@
+[
+  {
+    "id": 15,
+    "firstName": "Valerie",
+    "lastName": "Amiot",
+    "username": "ValTheGal",
+    "email": "valerie@gmail.com"
+  },
+  {
+    "id": 1,
+    "firstName": "Ademir",
+    "lastName": "Alijagic",
+    "username": "Adregon",
+    "email": "ademir@email.com"
+  },
+  {
+    "id": 2,
+    "firstName": "Sead",
+    "lastName": "Alijagic",
+    "username": "Seo",
+    "email": "sead@email.com"
+  },
+  {
+    "id": 3,
+    "firstName": "Senija",
+    "lastName": "Alijagic",
+    "username": "Sena",
+    "email": "senija@email.com"
+  },
+  {
+    "id": 4,
+    "firstName": "Ariane",
+    "lastName": "Sartor",
+    "username": "Monamour",
+    "email": "ariane@email.com"
+  },
+  {
+    "id": 5,
+    "firstName": "Cora",
+    "lastName": "Sartor",
+    "username": "Lulu",
+    "email": "cora@email.com"
+  }
+]
