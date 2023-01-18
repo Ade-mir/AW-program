@@ -1,9 +1,5 @@
+const { v4: uuidv4 } = require('uuid'); // Random id node module
 const fs = require('fs');
-
-let currentId = 1;
-function getNextId() {
-  return currentId++;
-}
 
 const UserAPI = (function () {
   let users = [];
@@ -11,7 +7,7 @@ const UserAPI = (function () {
   return {
     createUser: function (user) {
       const newUser = {
-        id: getNextId(),
+        id: uuidv4(),
         firstName: user.firstName,
         lastName: user.lastName,
         username: user.username,
@@ -23,21 +19,19 @@ const UserAPI = (function () {
     },
 
     getUser: function (userId) {
-      const id = parseInt(userId, 10);
+      const id = userId;
       return users.find((user) => user.id === id);
     },
 
     updateUser: function (userId, updates) {
-      const userIndex = users.findIndex(
-        (user) => user.id === parseInt(userId, 10)
-      );
+      const userIndex = users.findIndex((user) => user.id === userId);
       if (userIndex !== -1) {
         users[userIndex] = { ...users[userIndex], ...updates };
       }
     },
 
     deleteUser: function (userId) {
-      users = users.filter((user) => user.id !== parseInt(userId, 10));
+      users = users.filter((user) => user.id !== userId, 10);
     },
 
     load: function (save) {
