@@ -28,8 +28,8 @@ app.get('/pokemon/:id', (req, res) => {
         if (apiRes.statusCode === 200) {
           const data = JSON.parse(body);
           const name = data.name;
-          const frontImage = data.sprites.front_default;
-          const backImage = data.sprites.back_default;
+          const frontImage = data.sprites.front_shiny;
+          const backImage = data.sprites.back_shiny;
           const attacks = data.moves.map((move) => move.move.name);
 
           res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -59,7 +59,7 @@ app.get('/pokemon/:id', (req, res) => {
     });
 });
 
-const port = 3000;
+const port = 3333;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
