@@ -1,0 +1,42 @@
+body {
+  background: #ffffff;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body #container {
+  margin: 30px;
+  padding: 0 20% 20px 20%;
+  border: 10px solid transparent;
+  -o-border-image: url(border.png) 30 round;
+     border-image: url(border.png) 30 round;
+}
+body h1 {
+  text-transform: capitalize;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+}
+body #pokemon-pictures {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #pokemon-pictures img {
+  flex: 1;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+li {
+  text-transform: capitalize;
+}/*# sourceMappingURL=styles.css.map */

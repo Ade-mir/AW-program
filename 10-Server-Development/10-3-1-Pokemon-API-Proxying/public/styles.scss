@@ -1,0 +1,41 @@
+body {
+  background: #ffffff;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  #container {
+    margin: 30px;
+    padding: 0 20% 20px 20%;
+    border: 10px solid transparent;
+    border-image: url(border.png) 30 round;
+  }
+  h1 {
+    text-transform: capitalize;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #pokemon-pictures {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      flex: 1;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+li {
+  text-transform: capitalize;
+}
