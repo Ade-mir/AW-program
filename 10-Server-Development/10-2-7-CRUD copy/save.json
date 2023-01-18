@@ -1,0 +1,21 @@
+[
+  {
+    "id": "a628aaaa-68e4-46ff-9de9-5069f93f92d0",
+    "firstName": "Arne",
+    "lastName": "Arneson",
+    "username": "Arny",
+    "email": "Arn@gmail.com"
+  },
+  {
+    "id": "9b067ed2-d09f-43e3-ae74-8179aab3bd5d",
+    "firstName": "Anders",
+    "lastName": "Andersen",
+    "username": "ander",
+    "email": "andersenanders67@gmail.com"
+  },
+  { "id": "447c17a9-da34-4973-9cd7-b8c081890f13" },
+  { "id": "381250c9-c7d2-45fd-a476-06f4f2e6c36a" },
+  { "id": "99689685-e6b6-482b-9327-83e277cbcfdb" },
+  { "id": "e52d4eb7-ec29-4926-a2d5-2fe6d54f98f4" },
+  { "id": "fbfdba07-7656-4c77-8802-aea8a15da901" }
+]
