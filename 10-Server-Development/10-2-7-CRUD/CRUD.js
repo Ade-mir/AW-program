@@ -6,21 +6,19 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/user/:user_id', function (req, res) {
-  // console.log('User data saved: ', req.params);
   const user = dataBase.getUser(req.params.user_id);
   res.json(user);
 });
 
 app.post('/user', function (req, res) {
-  // console.log('User data received: ', req.body);
   dataBase.createUser(req.body);
-  res.status(200).end();
+  // res.status(200).end();
   dataBase.save('./save.json');
 });
 
 app.patch('/user/:user_id', function (req, res) {
   dataBase.updateUser(req.params.user_id, req.body);
-  res.status(200).end();
+  // res.status(200).end();
   dataBase.save('./save.json');
 });
 

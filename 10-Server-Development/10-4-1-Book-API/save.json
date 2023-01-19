@@ -1,0 +1,16 @@
+[
+  {
+    "id": "9bcaf44e-c5ba-4650-8e17-aff1a4dd0c29",
+    "title": "Lord of the Rings",
+    "author": "J.R.R Tolkien",
+    "summary": "The future of civilization...",
+    "coverImage": "https://someother.image.com/lotr.jpeg"
+  },
+  {
+    "id": "5b8bfeec-1e18-441f-b19c-475a80335d47",
+    "title": "The priory of the orange tree",
+    "author": "Firstname Shannon Something",
+    "summary": "Dragons, east vs west, a queendom under siege...",
+    "coverImage": "https://someother.image.com/lotr.jpeg"
+  }
+]
