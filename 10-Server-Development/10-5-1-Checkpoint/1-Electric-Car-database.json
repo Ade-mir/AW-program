@@ -1,0 +1,37 @@
+[
+  {
+    "id": "fa29527e-dc21-41cb-9ac3-557dc7e55126",
+    "name": "Leaf",
+    "maker": "Nissan",
+    "range": 150,
+    "fastCharge": false
+  },
+  {
+    "id": "f3ce5048-adaa-4160-8874-8b17759d4d88",
+    "name": "Model Y",
+    "maker": "Tesla",
+    "range": 430,
+    "fastCharge": true
+  },
+  {
+    "id": "b350882c-1722-418d-bf9b-ecf16fa90baf",
+    "name": "Model X",
+    "maker": "Tesla",
+    "range": 470,
+    "fastCharge": true
+  },
+  {
+    "id": "6a5cabb1-3607-4536-82f8-7b81b0b9755f",
+    "name": "Mustang Mach-E",
+    "maker": "Ford",
+    "range": 336,
+    "fastCharge": true
+  },
+  {
+    "id": "71a8b69f-a57b-46c7-a113-c363c8d04a6d",
+    "name": "Leafy",
+    "maker": "Nissan",
+    "range": 150,
+    "fastCharge": false
+  }
+]
