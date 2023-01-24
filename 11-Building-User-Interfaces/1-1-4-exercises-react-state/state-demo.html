@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script type="text/babel">
+      class ShowHide extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = {
+            visible: true,
+            count: props.initial,
+          };
+        }
+
+        handleCountClick(event) {
+          this.setState({
+            count: this.state.count + 1,
+          });
+        }
+
+        handleShowHide(event) {
+          this.setState({
+            visible: !this.state.visible
+          });
+        }
+
+        render() {
+          const showHideButtonText = this.state.visible ? 'Hide' : 'Show';
+
+          return (
+            <div>
+              <h1>My React App</h1>
+              <h3 onClick={this.handleCountClick.bind(this)}>{this.state.count}</h3>
+              <button onClick={this.handleShowHide.bind(this)}>
+                {showHideButtonText}
+              </button>
+              {this.state.visible && <p>This could be hidden</p>}
+            </div>
+          );
+        }
+      }
+
+      const mainNode = document.getElementById("main");
+      const root = ReactDOM.createRoot(mainNode);
+
+      root.render(<ShowHide initial={30} />);
+    </script>
+  </body>
+</html>

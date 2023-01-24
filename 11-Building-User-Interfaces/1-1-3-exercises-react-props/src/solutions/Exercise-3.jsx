@@ -6,7 +6,7 @@ const React = require('react');
  * all pass (they should be green).
  */
 
-let REPLACE_ME = () => <div/>;
+let REPLACE_ME = () => <div />;
 
 /**
  * HINT
@@ -15,9 +15,6 @@ let REPLACE_ME = () => <div/>;
  * However, give it a try before you do this,
  * as in most cases this will give you the answer flat out.
  */
-
-
-
 
 /**
  * ------------------------
@@ -43,20 +40,9 @@ let REPLACE_ME = () => <div/>;
 
 const MyFirstComponentWithProps = class extends React.Component {
   render() {
-    return (
-      <div className="awesome">
-        Hi, my name is {this.props.name}!
-      </div>
-    );
+    return <div className='awesome'>Hi, my name is {this.props.name}!</div>;
   }
 };
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -89,14 +75,6 @@ const MySecondComponentWithProps = class extends React.Component {
     );
   }
 };
-
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -147,21 +125,13 @@ const MyThirdComponentWithProps = class extends React.Component {
   render() {
     return (
       <div>
-        {this.props.paragraphs.map((paragraph, i) =>
+        {this.props.paragraphs.map((paragraph, i) => (
           <p key={'paragraph-' + i}>{paragraph}</p>
-        )}
+        ))}
       </div>
     );
   }
 };
-
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -204,26 +174,17 @@ const MyFourthComponentWithProps = class extends React.Component {
   render() {
     return (
       <div>
-        {this.props.lists.map((list, i) =>
+        {this.props.lists.map((list, i) => (
           <ul key={'list-' + i}>
-            {list.map((item, j) =>
+            {list.map((item, j) => (
               <li key={'item-' + i + '-' + j}>{item}</li>
-            )}
+            ))}
           </ul>
-        )}
+        ))}
       </div>
     );
   }
 };
-
-
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -251,21 +212,9 @@ const MyFourthComponentWithProps = class extends React.Component {
 
 const MyFifthComponentWithProps = class extends React.Component {
   render() {
-    return (
-      <div>
-        {this.props.children}
-      </div>
-    );
+    return <div>{this.props.children}</div>;
   }
 };
-
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -306,21 +255,9 @@ const MyFifthComponentWithProps = class extends React.Component {
 
 const MySixthComponentWithProps = class extends React.Component {
   render() {
-    return (
-      <div>
-        {this.props.showDetails ? this.props.children : null}
-      </div>
-    );
+    return <div>{this.props.showDetails ? this.props.children : null}</div>;
   }
 };
-
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -357,14 +294,6 @@ const MySeventhComponentWithProps = class extends React.Component {
     );
   }
 };
-
-
-
-
-
-
-
-
 
 /**
  * ------------------------
@@ -416,22 +345,6 @@ const MyEigthComponentWithProps = class extends React.Component {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Exports
  */
@@ -443,5 +356,5 @@ module.exports = {
   MyFifthComponentWithProps,
   MySixthComponentWithProps,
   MySeventhComponentWithProps,
-  MyEigthComponentWithProps
+  MyEigthComponentWithProps,
 };

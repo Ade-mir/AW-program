@@ -113,7 +113,17 @@ const MySecondComponentWithProps = class extends React.Component {
  * />
  */
 
-const MyThirdComponentWithProps = 
+const MyThirdComponentWithProps = class extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.paragraphs.map((paragraph, i) => (
+          <p key={'paragraph-' + i}>{paragraph}</p>
+        ))}
+      </div>
+    );
+  }
+};
 
 /**
  * ------------------------
@@ -152,7 +162,21 @@ const MyThirdComponentWithProps =
  *
  */
 
-const MyFourthComponentWithProps = REPLACE_ME;
+const MyFourthComponentWithProps = class extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.lists.map((list, i) => (
+          <ul key={'list-' + i}>
+            {list.map((item, j) => (
+              <li key={'item-' + i + '-' + j}>{item}</li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    );
+  }
+};
 
 /**
  * ------------------------
@@ -178,7 +202,11 @@ const MyFourthComponentWithProps = REPLACE_ME;
  *
  */
 
-const MyFifthComponentWithProps = REPLACE_ME;
+const MyFifthComponentWithProps = class extends React.Component {
+  render() {
+    return <div>{this.props.children}</div>;
+  }
+};
 
 /**
  * ------------------------
@@ -217,7 +245,13 @@ const MyFifthComponentWithProps = REPLACE_ME;
  *
  */
 
-const MySixthComponentWithProps = REPLACE_ME;
+const MySixthComponentWithProps = class extends React.Component {
+  render() {
+    if (this.props.showDetails === false) {
+      return <div>{null}</div>;
+    } else return <div>{this.props.children}</div>;
+  }
+};
 
 /**
  * ------------------------
@@ -244,7 +278,16 @@ const MySixthComponentWithProps = REPLACE_ME;
  *
  */
 
-const MySeventhComponentWithProps = REPLACE_ME;
+const MySeventhComponentWithProps = class extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        {this.props.children}
+      </div>
+    );
+  }
+};
 
 /**
  * ------------------------
@@ -285,7 +328,16 @@ const MySeventhComponentWithProps = REPLACE_ME;
  *
  */
 
-const MyEigthComponentWithProps = REPLACE_ME;
+const MyEigthComponentWithProps = class extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        {this.props.showDetails ? this.props.children : <p>No details..</p>}
+      </div>
+    );
+  }
+};
 
 /**
  * Exports
