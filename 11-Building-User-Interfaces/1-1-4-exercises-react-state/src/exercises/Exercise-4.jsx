@@ -104,7 +104,25 @@ const CheckboxWithLabel = class extends React.Component {
  *
  */
 
-const ClickCounter = REPLACE_ME;
+const ClickCounter = class ClickCounter extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+    };
+  }
+
+  handleClick() {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  }
+
+  render() {
+    return <div onClick={this.handleClick.bind(this)}>{this.state.count}</div>;
+  }
+};
 
 /**
  * ------------------------
@@ -142,7 +160,25 @@ const ClickCounter = REPLACE_ME;
  *
  */
 
-const ClickCounterWithInitialValue = REPLACE_ME;
+const ClickCounterWithInitialValue = class ClickCounterWithInitialValue extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: this.props.initialValue,
+    };
+  }
+
+  handleClick() {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  }
+
+  render() {
+    return <div onClick={this.handleClick.bind(this)}>{this.state.count}</div>;
+  }
+};
 
 /**
  * ------------------------
@@ -184,7 +220,37 @@ const ClickCounterWithInitialValue = REPLACE_ME;
  *
  */
 
-const IncrementDecrement = REPLACE_ME;
+const IncrementDecrement = class IncrementDecrement extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+    };
+  }
+
+  handlePlusClick() {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  }
+
+  handleMinusClick() {
+    this.setState({
+      count: this.state.count - 1,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handlePlusClick.bind(this)}>+</button>
+        <button onClick={this.handleMinusClick.bind(this)}>-</button>
+        <p>{this.state.count}</p>
+      </div>
+    );
+  }
+};
 
 /**
  * ------------------------
@@ -226,7 +292,38 @@ const IncrementDecrement = REPLACE_ME;
  *
  */
 
-const IncrementDecrementStep = REPLACE_ME;
+const IncrementDecrementStep = class IncrementDecrementStep extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+      step: this.props.stepInterval,
+    };
+  }
+
+  handlePlusClick() {
+    this.setState({
+      count: this.state.count + this.state.step,
+    });
+  }
+
+  handleMinusClick() {
+    this.setState({
+      count: this.state.count - this.state.step,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handlePlusClick.bind(this)}>+</button>
+        <button onClick={this.handleMinusClick.bind(this)}>-</button>
+        <p>{this.state.count}</p>
+      </div>
+    );
+  }
+};
 
 /**
  * Exports
