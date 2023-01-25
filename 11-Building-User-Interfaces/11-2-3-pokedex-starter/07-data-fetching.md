@@ -38,7 +38,7 @@ So now we have to:
 ## Example with data
 
 ```js
-import getPokemons from "./services/get-pokemons";
+import getPokemons from './services/get-pokemons';
 
 class PokemonList extends React.Component {
   constructor(props) {
@@ -62,11 +62,7 @@ class PokemonList extends React.Component {
     const { pokemons } = this.state;
 
     const pokemonElements = pokemons.map((pokemon) => {
-      return (
-        <li key={pokemon.name}>
-          {pokemon.name}
-        </li>
-      );
+      return <li key={pokemon.name}>{pokemon.name}</li>;
     });
 
     return <ul>{pokemonElements}</ul>;
@@ -84,7 +80,7 @@ We'll solve this by using a common convention
 ## Example with error and loading handling
 
 ```js
-import getPokemons from "./services/get-messages";
+import getPokemons from './services/get-messages';
 
 class PokemonList extends React.Component {
   constructor(props) {
@@ -131,11 +127,7 @@ class PokemonList extends React.Component {
     }
 
     const pokemonElements = pokemons.map((pokemon) => {
-      return (
-        <li key={pokemon.name}>
-          {pokemon.name}
-        </li>
-      );
+      return <li key={pokemon.name}>{pokemon.name}</li>;
     });
 
     return <ul>{pokemonElements}</ul>;

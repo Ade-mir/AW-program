@@ -4,7 +4,7 @@
   "description": "React Fundamentals Exercises",
   "main": "main.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --content-base public --hot --watch-poll --port 3000",
+    "start": "webpack-dev-server --content-base public --hot --watch-poll --port 3000",
     "test": "karma start",
     "watch:test": "karma start --no-single-run --browsers Chrome",
     "test:lint": "eslint src/**/*.js*",
